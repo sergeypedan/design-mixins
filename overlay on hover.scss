@@ -1,0 +1,47 @@
+/* (design mixins) / overlay on hover start */
+
+@mixin transitions($duration: .3s) {
+	transition-property: all;
+	transition-timing-function: ease-out; //linear
+	transition-duration: $duration;
+
+	&:hover,
+	&:focus { transition-duration: $duration; }
+}
+
+
+@mixin hover-parent {
+	overflow: hidden;
+	position: absolute;
+}
+
+
+
+@mixin overlay {
+	
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	opacity: 0;
+
+	color: white;
+	text-align: center;
+
+	@include transitions;
+
+	&:hover {
+		opacity: 0.8;
+		color: white;
+	}
+}
+
+@mixin scale($direction, $start: .7) {
+	@if $direction == down { $start: 1.4; }
+	transform: scale($start);
+	&:hover { transform: scale(1); }
+}
+
+
+
+
+
+/* (design mixins) / overlay on hover end */

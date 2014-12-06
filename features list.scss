@@ -1,0 +1,176 @@
+/* features list (design mixins) start */
+
+
+@import 'responsive scopes';
+@import 'block backgrounds';
+
+
+@mixin icon-on-top( $icon-size ) {
+
+	img,
+	object {
+		height: $icon-size;
+	}
+
+	.glyphicon,
+	.icomoon {
+		font-size: $icon-size - 5;
+		margin: .4em 0 .3em 0;
+		display: inline-block;
+	}
+
+	h3, h4 {
+		// margin-top: $icon-size * 0.1;
+		@extend .noTop;
+	}
+	
+}
+
+
+@mixin icon-on-top-2( $icon-size ) {
+
+	img,
+	object {
+		height: $icon-size;
+	}
+
+	.glyphicon,
+	.icomoon {
+		font-size: $icon-size;
+		margin-bottom: .3em;
+		display: inline-block;
+	}
+
+	h3, h4 { @extend .noTop; }
+	
+}
+
+
+
+
+
+
+
+
+	@mixin common-in-features(
+		$icon-size-lg,
+		$adjust-md,
+		$adjust-sm,
+		$adjust-xs
+	) {
+
+		margin-top: 20px;
+
+		.glyphicon,
+		.icomoon,
+		img.feature-icon,
+		object.feature-icon
+		{
+			$threshold: 20px;
+			@if ($icon-size-lg * 0.3 > $threshold) { margin-bottom: $threshold; }
+			@else { margin-bottom: $icon-size-lg * 0.3; }
+		}
+
+		img.feature-icon,
+		object {
+			@media #{$scope-xs} { height: $icon-size-lg * $adjust-xs; }
+			@media #{$scope-sm} { height: $icon-size-lg * $adjust-sm; }
+			@media #{$scope-md} { height: $icon-size-lg * $adjust-md; }
+			@media #{$scope-lg} { height: $icon-size-lg; }
+		}
+
+		.glyphicon,
+		.icomoon {
+			display: inline-block;
+
+			@media #{$scope-xs} { font-size: $icon-size-lg * $adjust-xs; }
+			@media #{$scope-sm} { font-size: $icon-size-lg * $adjust-sm; }
+			@media #{$scope-md} { font-size: $icon-size-lg * $adjust-md; }
+			@media #{$scope-lg} { font-size: $icon-size-lg; }
+		}
+
+		h3, h4 { @extend .noTop; }
+		p { @extend .muted; }
+	}
+
+
+
+@mixin features-ul(
+	$align: center,
+	$icon-size-lg: 70px,
+	$md: 1,
+	$sm: .7,
+	$xs: 1
+) {
+	
+	@include common-in-features( $icon-size-lg, $md, $sm, $xs );
+
+	text-align: center; // нужно, чтобы короткие li (в которых короткое содержимое) не съезжали влево
+	padding-left: 0;	// у ul часто отступ слева для буллитов
+	margin-left: 0;	// опять же, отменяем что-то нативное ulовское
+	list-style-type: none;	// ясно
+
+	li {
+		 text-align: $align;
+		 vertical-align: top;
+	}
+}
+
+@mixin features-div(
+	$align: center,
+	$icon-size-lg: 70px,
+	$md: 1,
+	$sm: .7,
+	$xs: 1
+) {
+	@include common-in-features( $icon-size-lg, $md, $sm, $xs );
+
+	& > div { text-align: $align; }
+
+}
+
+
+
+@mixin hanging-icons(
+	$img-width: 40,
+	$gutter: 20px
+) {
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
+
+	li {
+		background-image: url('http://placehold.it/#{$img-width}x#{$img-width}');
+		background-repeat: no-repeat;
+		padding-left: $img-width + $gutter;
+	}
+}
+
+
+@mixin timeline-ol (
+	$line-url: 'http://placehold.it/2x10'
+) {
+	background-image: url($line-url);
+	background-repeat: repeat-y;
+	background-position-x: 19px;
+}
+
+
+
+
+@mixin timeline-ol-2 () {
+
+	list-style-type: none;
+	padding-left: 0;
+
+	li {
+		@extend %panel-4;
+	}
+}
+
+
+
+
+
+
+/* features list (design mixins) end */

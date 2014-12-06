@@ -1,0 +1,25 @@
+@mixin gentle-gradient-1($bg-color, $angle: 0) {
+	background-color: $bg-color;
+
+	$adjusted-color: lighten( $bg-color, 5% );
+	$adjusted-color: adjust-hue( $adjusted-color, 10deg );
+	$adjusted-color: saturate( $adjusted-color, 5% );
+
+	background-image: linear-gradient(
+		#{$angle}deg,
+		$bg-color, $adjusted-color
+	);
+}
+
+@mixin gentle-gradient-2($bg-color) {
+	background-color: $bg-color;
+
+	$adjusted-color: lighten( $bg-color, 5% );
+	$adjusted-color: adjust-hue( $adjusted-color, 10deg );
+	//$adjusted-color: saturate( $adjusted-color, 5% );
+
+	background-image: radial-gradient(
+		top,
+		$adjusted-color, $bg-color
+	);
+}

@@ -1,0 +1,49 @@
+@mixin bar-after-header( $color, $thickness: 4px ) {
+	&:after {
+		content: '';
+		display: block;
+		height: $thickness;
+		width: 20%;
+		background-color: $color;
+		margin-left: 40%;
+		margin-top: 15px;
+	}
+}
+
+
+@mixin dots-after-header( $color, $font-size: 30px ) {
+	&:after {
+		content: '• • •';
+		display: block;
+		font-size: $font-size;
+		color: $color;
+		width: 20%;
+		margin-left: 40%;
+		margin-top: 15px;
+	}
+}
+
+
+@mixin quote-before-header( $color, $font-size: 30px ) {
+	&:before {
+		content: '\"';
+		display: block;
+		font-size: $font-size;
+		color: $color;
+		width: 20%;
+		margin-left: 40%;
+		margin-top: 15px;
+	}
+}
+
+
+@mixin between-hrs-background ( $bg-url ) {
+
+	background: url($bg-url) repeat-x center;
+
+	span {
+		display: inline-block;
+		padding: 0 .7em;
+		background: hsl(0, 100%, 100%);
+	}
+}

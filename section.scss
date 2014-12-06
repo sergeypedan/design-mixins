@@ -1,0 +1,35 @@
+/* section (be) start */
+
+@import 'section padding.scss';
+
+
+section {
+	
+	@include section(4em, 2em);
+
+	// h1:first-child,
+	// .h1:first-child,
+	// h2:first-child,
+	// .h2:first-child { margin-top: 0; }
+}
+// для своеих параметров section padding использовать @include section (смотри выше)
+
+
+
+body > hr { margin: 0; } // т. к. у section уже есть отступы, линейкам между ними отступы не нужны
+
+.container > hr {
+	margin: 30px 0;
+	@media #{ $scope-xs } { margin: 15px 0; }
+}
+
+
+
+footer {
+	padding-top: 3em;
+	padding-bottom: 1em;
+}
+	blockquote footer { padding: 0; } // это подпись цитаты, и ей не нужен такой здоровый паддинг
+
+
+/* section (be) end */

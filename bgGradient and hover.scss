@@ -1,0 +1,8 @@
+@mixin bgGradient-and-hover($color, $intensity: 5%)
+{
+	background-image: linear-gradient($color, darken($color, $intensity) );
+	
+	&:hover {
+		background-image: linear-gradient(lighten($color, $intensity - 2%), $color );
+	}
+}

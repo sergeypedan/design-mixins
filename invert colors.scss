@@ -1,0 +1,45 @@
+/* (design mixins) / invert colors */
+
+@mixin invert-prototype(
+	$color-link-invert: hsl(212, 55%, 57%),
+	$color-text: hsl(0, 0%, 30%)
+) {
+	-webkit-font-smoothing: antialiased;
+	color: rgba(255, 255, 255, 0.8);
+
+	.muted { color: rgba(255, 255, 255, 0.5); }
+
+	b, .lead { color: white; }
+
+	a:not(.btn) { color: $color-link-invert; }
+	a:not(.btn):hover { color: lighten( $color-link-invert, 5% ); }
+
+	.AJAXlink {
+		border-color: $color-link-invert;
+
+		&:hover {
+			// border-bottom-style: solid;
+			color: lighten( $color-link-invert, 5% );
+		}
+	}
+
+	// a.btn:hover { color: inherit; }
+
+	h1, h2, h3, h4, h5,
+	.h1, .h2, .h3, .h4, .h5 { color: white !important; }
+	
+	input,
+	textarea { color: $color-text; }
+
+	fieldset { background: rgba(255,255,255,0.06); }
+
+	hr { border-top-color: rgba(128, 128, 128, 0.26); }
+
+	.rule-above,
+	.rule-below { border-color: rgba(255,255,255,0.2); }
+
+	// .nav-pills a:hover { color: white; }
+
+}
+
+/* end (design mixins) / invert colors */

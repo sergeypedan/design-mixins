@@ -1,0 +1,67 @@
+/* links (design mixins) start */
+
+@mixin link-underline( $color: hsl(208, 88%, 33%), $hover-color: hsl(208, 95%, 25%) ) {
+	color: $color;
+	text-decoration: underline;
+
+	&.btn {
+		text-decoration: none;
+	}
+
+	&.AJAXlink,
+	&.AJAX,
+	&.pseudo {
+		text-decoration: none;
+		border-bottom: dotted 1px $color;
+
+		&:hover {
+			color: $hover-color;
+			text-decoration: none;
+		}
+	}
+	&.no-link {
+		text-decoration: none;
+		color: $color-text;
+	}
+}
+
+
+@mixin link-no-underline( $color: hsl(208, 88%, 33%), $hover-color: hsl(208, 95%, 25%) ) {
+	&.AJAXlink {
+		text-decoration: none;
+		border-bottom: dotted 1px $color-link;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+
+// @mixin link-border( $color: hsl(208, 88%, 33%), $hover-color: hsl(208, 95%, 25%) ) {
+// 	a > img { border: none; }
+
+// 	a {
+// 		border-bottom: solid 1px lighten( $color-link, 20% );
+
+// 		&:hover {
+// 			text-decoration: none;
+// 			color: $color-link-hover;
+// 			border-bottom-color: $color-link-hover;
+// 		}
+// 	}
+
+// 	.AJAXlink {
+// 		border-bottom: dotted;
+// 	}
+
+// 	.navbar a,
+// 	.navbar a:hover {
+// 		border-bottom: 0;
+// 	}
+// }
+
+
+
+
+/* links (design mixins) end */

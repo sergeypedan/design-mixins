@@ -1,0 +1,84 @@
+/* buttons yandex (design mixins) start */
+
+@import 'responsive scopes.scss';
+
+.btn-yandex-lg {
+	.b-share_theme_counter {
+		.b-share__handle.b-share__link {
+			padding: 10px 15px !important;
+			border-radius: 2px;
+
+			@media #{$scope-iPhone-portrait} {
+				padding: 8px 6px !important;
+			}
+		}
+		.b-share-counter {
+			font-weight: bold;
+			font-size: 20px;
+			margin-left: 10px;
+		}
+	}
+
+	@media #{$scope-xs} {
+		.b-share-btn__wrap{
+			margin-right: 10px;
+			margin-left: 0 !important;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.btn-yandex-md {
+	.b-share_theme_counter {
+		.b-share__handle.b-share__link {
+			padding: 6px 6px !important;
+			border-radius: 2px;
+		}
+		.b-share-counter {
+			font-weight: bold;
+			font-size: 15px;
+			margin-left: 8px;
+		}
+	}
+}
+
+
+
+	.b-share_theme_counter {
+
+		.b-share__link:active {
+			height: auto !important;
+			margin-top: -2px;
+		}
+
+		& > .b-share {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+
+		.b-share-icon.b-share-icon_gplus {
+			background-image: url('../images/icons/googleplus.svg');
+			background-position: center 80%;
+			background-size: 85%;
+		}
+
+		.b-share-icon.b-share-icon_linkedin {
+			background-image: url('../images/icons/linkedin-type.svg');
+			background-position: center 36%;
+			background-size: 73%;
+
+			.btn-yandex-lg & {
+				background-position-y: 20%;
+				background-size: 85%;
+			}
+		}
+	}
+
+
+
+.b-share-btn__linkedin {
+	background-color: #0976b4;
+	&:hover { background-color: hsl(202, 90%, 28%); }
+}
+
+/* buttons yandex (design mixins) end */

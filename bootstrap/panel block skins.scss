@@ -1,0 +1,36 @@
+/* mixins / panel block constructor */
+
+@import 'gradients.scss';
+
+@mixin panel-glass-1() {
+
+	border-color: hsla(100, 50%, 85%, .1);
+	border-radius: 2px;
+	@include gentle-gradient-2( hsla(0, 20%, 85%, .05) );
+}
+
+
+@mixin panel-border-top( $color, $width: 3px ) {
+
+	border-top-width: $width;
+	border-top-color: $color;
+}
+
+
+
+/* из сниппета «белый лист на сером фоне»
+
+body {
+	background-color: hsl(204, 14%, 86%);
+}
+
+div.box {
+	background-color: white;
+	box-shadow: 0 1px 1px hsl(204, 11%, 74%);
+	color: hsl(213, 9%, 38%);
+}
+
+*/
+
+
+/* end mixins / panel block constructor */

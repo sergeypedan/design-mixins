@@ -1,0 +1,25 @@
+/* mixins / responsive width start */
+
+.width-container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media (min-width: 768px)
+{
+	.width-container { width: 750px; }
+}
+
+@media (min-width: 992px)
+{
+	.width-container { width: 970px; }
+}
+
+@media (min-width: 1200px)
+{
+	.width-container { width: 1170px; }
+}
+
+/* mixins / responsive width end */

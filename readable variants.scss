@@ -1,0 +1,147 @@
+//  ---- LINE-HEIGHT TRANSLATION ----
+
+/*
+
+	14px	21px	1.5em
+	
+	15px	22px	em
+	15px	24px	1.6em
+	15px	23px	1.55em
+
+	16px	22.4px	1.4em
+	16px	23px	1.45em
+	16px	25px	1.6em
+
+*/
+
+//  ---- TEMPLATE ----
+
+/*
+
+// site.com
+.font-site {
+	font-family: ;
+	font-size: px;
+	line-height: em;
+	max-width: em;
+	color: #;
+	margin-bottom: 1em;
+}
+
+*/
+
+
+
+
+//  ---- SANS-SERIF ---- 
+
+
+%arial {
+	font-family: Arial;
+	font-size: 15px;
+	line-height: 22px;
+	max-width: 44em;
+}
+
+
+%ptSans {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	line-height: 1.5em; // 21px
+	max-width: 54em;
+	color: #808080;
+}
+
+
+// ЖЖ Варламова
+%ProximaNova-VarlamovZZ {
+	font-family: 'ProximaNova-Regular', Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.4em; // 22.4px
+	max-width: 53em;
+	color: #36474d;
+}
+
+
+// Foursquare blog
+%ProximaNova-Foursquare {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	line-height: 1.6em; // 24px
+	max-width: 47em;
+	color: #4c4c4c;
+	margin-bottom: 20px;
+}
+
+
+// thespiritscience.net Lato
+%Lato-thespiritscience {
+	font-family: Lato;
+	font-size: 16px;
+	line-height: 1.6em; // 24px
+	max-width: 47em;
+	color: #2b2b2b;
+	margin-bottom: 24px;
+}
+
+
+// typecast.com
+%Myriad-typecast {
+	font-family: 'Myriad-Pro';
+	font-size: 16px;
+	line-height: 1.618; // 25.88px
+	max-width: 43em;
+	color: #333;
+	margin-bottom: 1.6em;
+}
+
+
+
+
+
+
+
+//  ---- SERIF ---- 
+
+
+// furfur.me
+%Georgia-furfur {
+	font-family: Georgia, serif;
+	font-size: 15px;
+	line-height: 1.55em; // 23px
+	max-width: 41em;
+	color: #262626;
+	margin-bottom: 20px;
+}
+
+
+// hopesandfears.com
+%Georgia-hopesandfears {
+	font-family: Georgia, serif;
+	font-size: 16px;
+	line-height: 1.6em; // 25px
+	max-width: 39em;
+	color: #262626;
+}
+
+
+// nytimes.com
+%Georgia-nytimes {
+	font-family: Georgia, serif;
+	font-size: 16px;
+	line-height: 1.45em; // 23px
+	color: #333333;
+	margin-bottom: 1em;
+	max-width: 34em;
+}
+
+
+// eroskosmos.org
+%ptSerif-eroskosmos {
+	font-family: 'PT Serif', serif;
+	font-size: 16px;
+	line-height: 1.6em; // 25px
+	max-width: 44em;
+	color: #333333;
+	color: #424242;
+}

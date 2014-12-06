@@ -1,0 +1,103 @@
+/* mixins / HRs (design mixins) end */
+
+
+
+@mixin hr-background-image($image_URL, $thickness: 3px) {
+	height: $thickness;
+	border: 0;
+	background-image: url($image_URL);
+	background-size: cover;
+	background-position: center;
+}
+
+
+
+@mixin border-image($side, $width-no-px, $img: none) {
+	$source: url($img);
+	$b-width: #{$width-no-px}px; // ширина самого бордера. То же, что и border-width
+	$slice: $width-no-px; // какой толщины кусок от картинки будет использован в качестве семпла для бордера (принимает 4 значения для всех сторон)
+	$repeat: repeat;
+
+	//border-#{ $side }: solid $border-width;
+
+	@if $side == top {
+		border-image: $source $slice 0 0 0 / $b-width 0px 0px 0px $repeat;
+	} @if $side == "all" {
+		border-image: $source $slice / $b-width $repeat;
+	} @if $side == bottom {
+		border-image: $source 0 0 $slice 0 / 0px 0px $b-width 0px $repeat;
+	}
+}
+
+
+
+@mixin hr-icon-inside($image_URL, $icon_width, $icon_height, $border_width: 10px) {
+
+	body > & {
+		margin-bottom: 0px;
+		margin-top: 0px;
+	}
+
+	.container > & {
+		margin-bottom: 40px;
+		margin-top: 40px;
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		position: relative;
+
+		width: $icon_width + ($border_width * 2);
+		height: $icon_height;
+
+		left: 50%;
+		top: (-1) * $icon_height / 2;
+		margin-left: (-1) * ($icon_width / 2 + $border_width);
+
+		background-image: url($image_URL);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+
+		border-color: white;
+		border-width: 0 $border_width;
+		border-style: solid;
+	}
+}
+
+
+
+@mixin hr-fading( $color: hsl(0, 0%, 93%), $thickness: 1px ) {
+	height: $thickness;
+	border: 0;
+	background-image: linear-gradient(
+		left,
+		hsla(0, 0%, 0%, .01),
+		$color,
+		hsla(0, 0%, 0%, .01)
+	);
+
+	.invert & {
+		background-image: linear-gradient(
+			left,
+			hsla(0, 0%, 0%, .01),
+			hsla(0, 0%, 100%, .2),
+			hsla(0, 0%, 0%, .01)
+		);
+	}
+}
+
+
+
+@mixin hr-rainbow( $bg-color: hsl(0, 0%, 90%), $thickness: 1px ) {
+	height: $thickness;
+	border: 0;
+	background-image: linear-gradient(
+		left,
+		// transparentize($bg-color, 0.25),
+		red, $bg-color, violet
+		// transparentize($bg-color, 0.25)
+	);
+}
+
+/* mixins / HRs (design mixins) end */
