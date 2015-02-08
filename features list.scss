@@ -21,7 +21,7 @@
 
 	h3, h4 {
 		// margin-top: $icon-size * 0.1;
-		@extend .noTop;
+		margin-top: 0;
 	}
 	
 }
@@ -41,7 +41,7 @@
 		display: inline-block;
 	}
 
-	h3, h4 { @extend .noTop; }
+	h3, h4 { margin-top: 0; }
 	
 }
 
@@ -59,8 +59,6 @@
 		$adjust-xs
 	) {
 
-		margin-top: 20px;
-
 		.glyphicon,
 		.icomoon,
 		img.feature-icon,
@@ -73,24 +71,24 @@
 
 		img.feature-icon,
 		object {
-			@media #{$scope-xs} { height: $icon-size-lg * $adjust-xs; }
-			@media #{$scope-sm} { height: $icon-size-lg * $adjust-sm; }
-			@media #{$scope-md} { height: $icon-size-lg * $adjust-md; }
-			@media #{$scope-lg} { height: $icon-size-lg; }
+			@media #{$xs} { height: $icon-size-lg * $adjust-xs; }
+			@media #{$sm} { height: $icon-size-lg * $adjust-sm; }
+			@media #{$md} { height: $icon-size-lg * $adjust-md; }
+			@media #{$lg} { height: $icon-size-lg; }
 		}
 
 		.glyphicon,
 		.icomoon {
 			display: inline-block;
 
-			@media #{$scope-xs} { font-size: $icon-size-lg * $adjust-xs; }
-			@media #{$scope-sm} { font-size: $icon-size-lg * $adjust-sm; }
-			@media #{$scope-md} { font-size: $icon-size-lg * $adjust-md; }
-			@media #{$scope-lg} { font-size: $icon-size-lg; }
+			@media #{$xs} { font-size: $icon-size-lg * $adjust-xs; }
+			@media #{$sm} { font-size: $icon-size-lg * $adjust-sm; }
+			@media #{$md} { font-size: $icon-size-lg * $adjust-md; }
+			@media #{$lg} { font-size: $icon-size-lg; }
 		}
 
-		h3, h4 { @extend .noTop; }
-		p { @extend .muted; }
+		h3, h4, h5 { margin-top: 0; }
+		p { @extend .text-muted; }
 	}
 
 
@@ -105,9 +103,9 @@
 	
 	@include common-in-features( $icon-size-lg, $md, $sm, $xs );
 
-	text-align: center; // нужно, чтобы короткие li (в которых короткое содержимое) не съезжали влево
+	text-align: center; // чтобы li с коротким содержимым не съезжали влево
 	padding-left: 0;	// у ul часто отступ слева для буллитов
-	margin-left: 0;	// опять же, отменяем что-то нативное ulовское
+	// margin-left: 0;	 у ul часто отступ слева для буллитов — но это может конфликтовать с margin-left: auto в li-grid, т. что нужно ставить li-grid после
 	list-style-type: none;	// ясно
 
 	li {
@@ -115,6 +113,9 @@
 		 vertical-align: top;
 	}
 }
+
+
+
 
 @mixin features-div(
 	$align: center,
@@ -131,20 +132,8 @@
 
 
 
-@mixin hanging-icons(
-	$img-width: 40,
-	$gutter: 20px
-) {
-	list-style: none;
-	padding-left: 0;
-	margin-left: 0;
 
-	li {
-		background-image: url('http://placehold.it/#{$img-width}x#{$img-width}');
-		background-repeat: no-repeat;
-		padding-left: $img-width + $gutter;
-	}
-}
+
 
 
 @mixin timeline-ol (
@@ -168,7 +157,12 @@
 	}
 }
 
-
+@mixin benefits-1( $icon-url ) {
+	li {
+		background-image: url($icon-url);
+		background-position-y: 4px;
+	}
+}
 
 
 

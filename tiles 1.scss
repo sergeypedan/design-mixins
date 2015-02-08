@@ -1,0 +1,154 @@
+// structure:
+// <ul>
+// 	<li>
+// 		<div class="picture-container">
+// 			<img src="" alt="">
+// 		</div>
+// 		<div class="details">
+// 			<h4></h4>
+// 			<p></p>
+// 		</div>
+// 	</li>
+// </ul>
+
+// .li-grid {
+// 	@extend %li-grid__common;
+// 	li {
+// 		@extend %li__xs-1;
+// 		@extend %li__sm-3;
+// 		@extend %li__md-4;
+// 		@extend %li__lg-6;
+// 	}
+// }
+
+%susy-container {
+	@include container;
+
+	@media #{$lg} { max-width: 1170px; }
+	@media #{$md} { max-width: 970px; }
+	@media #{$sm} { max-width: 750px; }
+	@media #{$xs} { margin-left: 20px; margin-right: 20px; }
+}
+
+%li-grid__common {
+
+	@extend %susy-container;
+
+	padding-left: 0;
+	margin-bottom: 0;
+	margin-top: 1em;
+
+	list-style-type: none;
+}
+
+
+
+
+%li__xs-1 {
+	@media #{$xs} {
+		&:nth-child(n+2) { margin-top: 30px; }
+		@include clearfix;
+	}
+}
+%li__xs-2 {
+	@media #{$xs} {
+		@include gallery(1 of 2 1/5);
+		&:nth-child(n+3) { margin-top: 30px; }
+	}
+}
+
+%li__sm-2 {
+	@media #{$sm} {
+		@include gallery(1 of 2 1/5);
+		&:nth-child(n+3) { margin-top: 30px; }
+	}
+}
+%li__sm-3 {
+	@media #{$sm} {
+		@include gallery(1 of 3 1/5);
+		&:nth-child(n+4) { margin-top: 30px; }
+	}
+}
+%li__sm-4 {
+	@media #{$sm} {
+		@include gallery(1 of 4 1/5);
+		&:nth-child(n+5) { margin-top: 30px; }
+	}
+}
+%li__md-3 {
+	@media #{$md} {
+		@include gallery(1 of 3 1/5);
+		&:nth-child(n+4) { margin-top: 30px; }
+	}
+}
+%li__md-4 {
+	@media #{$md} {
+		@include gallery(1 of 4 1/5);
+		&:nth-child(n+5) { margin-top: 30px; }
+	}
+}
+%li__md-5 {
+	@media #{$md} {
+		@include gallery(1 of 5 1/5);
+		&:nth-child(n+6) { margin-top: 30px; }
+	}
+}
+%li__lg-5 {
+	@media #{$lg} {
+		@include gallery(1 of 5 1/5);
+		&:nth-child(n+6) { margin-top: 30px; }
+	}
+}
+%li__lg-6 {
+	@media #{$lg} {
+		@include gallery(1 of 6 1/5);
+		&:nth-child(n+7) { margin-top: 30px; }
+	}
+}
+%li__lg-7 {
+	@media #{$lg} {
+		@include gallery(1 of 7 1/5);
+		&:nth-child(n+8) { margin-top: 30px; }
+	}
+}
+%li__lg-8 {
+	@media #{$lg} {
+		@include gallery(1 of 8 1/5);
+		&:nth-child(n+9) { margin-top: 30px; }
+	}
+}
+
+
+
+
+
+// horizontal thumbnail
+
+%horizontal_thumbnail__picture_container {
+	@media #{$xs} {
+		float: left;
+		max-width: 30%;
+	}
+
+	a { border-bottom: 0px; }
+
+	img {
+		display: block;
+		max-width: 100%;
+	}
+
+	margin-bottom: 15px;
+}
+
+%horizontal_thumbnail__desctiption {
+	@media #{$xs} {
+		margin-left: 37%;
+	}
+	h3, h4, h5, h6 {
+		margin-top: 0;
+	}
+}
+
+
+
+

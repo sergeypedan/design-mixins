@@ -4,7 +4,11 @@
 	color: $color;
 	text-decoration: underline;
 
-	&.btn {
+	&:hover,
+	&:focus { color: $hover-color; }
+
+	&.btn,
+	&.btn:hover {
 		text-decoration: none;
 	}
 
@@ -14,7 +18,8 @@
 		text-decoration: none;
 		border-bottom: dotted 1px $color;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			color: $hover-color;
 			text-decoration: none;
 		}
@@ -31,35 +36,61 @@
 		text-decoration: none;
 		border-bottom: dotted 1px $color-link;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			text-decoration: none;
 		}
 	}
 }
 
 
-// @mixin link-border( $color: hsl(208, 88%, 33%), $hover-color: hsl(208, 95%, 25%) ) {
-// 	a > img { border: none; }
+@mixin link-border( $color: hsl(208, 88%, 33%), $hover-color: hsl(208, 95%, 25%), $opacity: .2 ) {
+	
+	color: $color;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: transparentize( $color, 1 - $opacity );
 
-// 	a {
-// 		border-bottom: solid 1px lighten( $color-link, 20% );
+	transition-property: border-bottom-color;
+	transition-duration: .5s;
 
-// 		&:hover {
-// 			text-decoration: none;
-// 			color: $color-link-hover;
-// 			border-bottom-color: $color-link-hover;
-// 		}
-// 	}
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: $hover-color;
+		border-bottom-color: transparentize( $hover-color, .4 );
+		transition-duration: .2s;
+	}
 
-// 	.AJAXlink {
-// 		border-bottom: dotted;
-// 	}
+	&.AJAXlink,
+	&.pseudo {
+		border-bottom-style: dotted;
+		border-bottom-color: transparentize( $color, .5 );
+	}
 
-// 	.navbar a,
-// 	.navbar a:hover {
-// 		border-bottom: 0;
-// 	}
-// }
+	&.no-link,
+	&.noLink {
+		border-bottom-style: none;
+	}
+
+	&.sudden-link {
+		color: inherit;
+		border-bottom-style: none;
+
+		&:hover,
+		&:focus {
+			color: $hover-color;
+			border-bottom-style: solid;
+		}
+	}
+
+	.navbar &,
+	.navbar &:hover {
+		border-bottom: 0;
+	}
+
+	& > img { border: none; }
+}
 
 
 

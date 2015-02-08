@@ -1,34 +1,32 @@
 //  ---- LINE-HEIGHT TRANSLATION ----
 
-/*
 
-	14px	21px	1.5em
-	
-	15px	22px	em
-	15px	24px	1.6em
-	15px	23px	1.55em
 
-	16px	22.4px	1.4em
-	16px	23px	1.45em
-	16px	25px	1.6em
+// 14px	21px	1.5em
 
-*/
+// 15px	22px	em
+// 15px	24px	1.6em
+// 15px	23px	1.55em
+
+// 16px	22.4px	1.4em
+// 16px	23px	1.45em
+// 16px	25px	1.6em
+
+
 
 //  ---- TEMPLATE ----
 
-/*
-
 // site.com
-.font-site {
-	font-family: ;
-	font-size: px;
-	line-height: em;
-	max-width: em;
-	color: #;
-	margin-bottom: 1em;
-}
+// .font-site {
+// 	font-family: ;
+// 	font-size: px;
+// 	line-height: em;
+// 	max-width: em;
+// 	color: #;
+// 	margin-bottom: 1em;
+// }
 
-*/
+
 
 
 
@@ -93,6 +91,15 @@
 	max-width: 43em;
 	color: #333;
 	margin-bottom: 1.6em;
+}
+
+
+%open-sans-15_5 {
+	font-family: 'Open Sans';
+	font-size: 15.5px;
+	line-height: 1.5em;
+	margin-bottom: 15.5px;
+	color: hsl(0, 0%, 25%);
 }
 
 

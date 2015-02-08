@@ -1,14 +1,23 @@
-@mixin border-img($side, $width-no-px, $img: none) {
+@mixin border-img(
+	$side,
+	$width-no-px,
+	$img: none,
+	$repeat: repeat
+) {
 	$source: url($img);
 	$slice: $width-no-px; // !без пикселей! это какой высоты (если top/bottom) кусок от картинки будет использован в качестве картинки для бордера (принимает 4 значения для всех сторон)
 	$b-width: #{$width-no-px}px; // а это уже ширина самого бордера. То же, что и border-width
-	$repeat: repeat;
 
 	@if $side == top {
-		border-image: $source $slice 0 0 0 / $b-width 0px 0px 0px $repeat;
-	} @if $side == "all" {
+		// border-image: $source $slice 0 0 0 / $b-width 0px 0px 0px $repeat;
+		border-style: solid;
+		border-width: $b-width 0 0;
+		border-image: $source $slice 0 0 fill $repeat;
+	}
+	@if $side == "all" {
 		border-image: $source $slice / $b-width $repeat;
-	} @else {
+	}
+	@if $side == bottom {
 		border-image: $source 0 0 $slice 0 / 0px 0px $b-width 0px $repeat;
 	}
 }

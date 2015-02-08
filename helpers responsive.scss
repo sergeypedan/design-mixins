@@ -1,0 +1,70 @@
+/* helpers responsive start */
+
+@import 'responsive scopes';
+
+
+
+// aligners based on scope
+
+@media #{$xs} {
+	.col-xs-top { margin-top: 3em; }
+	// .col-xs-bottom:not(:last-child) { margin-bottom: 3em; }
+	.col-xs-bottom { margin-bottom: 35px; }
+	.col-xs-between + .col-xs-between { margin-top: 35px; }
+
+	.xs-noTop, .noTop-xs { margin-top: 0 !important; padding-top: 0 !important; }
+	.xs-noBottom, .noBottom-xs { margin-bottom: 0; padding-bottom: 0; }
+
+	.col-xs-left, .text-left-xs { text-align: left; }
+	.col-xs-right, .text-right-xs { text-align: right; }
+	.col-xs-center, .text-center-xs { text-align: center; }
+	
+	.col-xs-clearleft { clear: left; }
+}
+
+@media #{$sm} {
+	.col-sm-top { margin-top: 2em; }
+	.col-sm-bottom:not(:last-child) { margin-bottom: 30px; }
+	.col-sm-between + .col-sm-between { margin-top: 30px; }
+
+	.noTop-sm { margin-top: 0 !important; padding-top: 0 !important; }
+	.noBottom-sm { margin-bottom: 0; padding-bottom: 0; }
+
+	.col-sm-left, .text-left-sm { text-align: left; }
+	.col-sm-right, .text-right-sm { text-align: right; }
+	.col-sm-center, .text-center-sm { text-align: center; }
+	
+	.col-sm-clearleft { clear: left; }
+}
+
+@media #{$sm-plus} {
+	.noTop-sm-plus { margin-top: 0 !important; padding-top: 0 !important; }
+	.noBottom-sm-plus { margin-bottom: 0; padding-bottom: 0; }
+}
+
+@media #{$md} {
+	.col-md-top { margin-top: 1.5em; }
+	.col-md-bottom:not(:last-child) { margin-bottom: 30px; }
+	.col-md-between + .col-md-between { margin-top: 30px; }
+
+	.noTop-md { margin-top: 0 !important; padding-top: 0 !important; }
+	.noBottom-md { margin-bottom: 0; padding-bottom: 0; }
+
+	.col-md-left { text-align: left; }
+	.col-md-right { text-align: left; }
+	.col-md-center { text-align: left; }
+}
+
+@media #{$lg} {
+	// .col-lg-top { margin-top: 1.5em; }
+	// .col-lg-bottom + .col-lg-bottom { margin-top: 1.5em; }
+
+	.noTop-lg { margin-top: 0 !important; padding-top: 0 !important; }
+	.noBottom-lg { margin-bottom: 0; padding-bottom: 0; }
+
+	.text-left-lg { text-align: left; }
+	.text-right-lg { text-align: right; }
+	.text-center-lg { text-align: center; }
+}
+
+/* helpers responsive end */

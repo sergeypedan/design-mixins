@@ -1,0 +1,52 @@
+// Варианты выделения активного элемента
+
+
+%reset-default-navbar-appearence {
+	border-bottom: none;
+
+	.active {
+		a,
+		a:hover,
+		a:focus {
+			box-shadow: none;
+			background: none;
+		}
+	}
+}
+
+
+@mixin navbar-active-dash( $color: $color-link, $side: bottom, $width: 2px ) {
+
+	@extend %reset-default-navbar-appearence;
+
+	.active {
+		a,
+		a:hover,
+		a:focus {
+			border-#{ $side }: solid $width $color;
+			padding-#{ $side }: 15px - $width;
+		}
+	}
+}
+
+
+@mixin navbar-active-inset(
+	$bg-color-active: hsl(0, 0%, 98%)
+) {
+
+	@extend %reset-default-navbar-appearence;
+
+	.active {
+		a,
+		a:hover,
+		a:focus {
+			// color: $color-text;
+			background-color: $bg-color-active;
+			box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.07);
+		}
+	}
+
+	a:hover {
+		background-color: $bg-color-active;
+	}
+}

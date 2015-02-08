@@ -1,37 +1,34 @@
-/* mixins / responsive scopes start */
-
-
 // Ещё сюда можно импортировать переменные из var
 // $break-lg: 1200px;
 // $break-md: 992px;
 // $break-sm: 768px;
 
-	$scope-iPhone-portrait: "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait)";
-	$scope-iPhone-landscape: "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape)";
-	$scope-iPhone-all: "only screen and (min-device-width : 320px) and (max-device-width : 568px)";
+	$iPhone-portrait: "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait)";
+	$iPhone-landscape: "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape)";
+	$iPhone-all: "only screen and (min-device-width : 320px) and (max-device-width : 568px)";
 
 // дырка между 568 и 768
 
-$scope-xs: "only screen and (max-width : 767px)";
+$xs: "only screen and (max-width : 767px)";
 
-	$scope-iPad-portrait: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)";
-	$scope-iPad-landscape: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)";
-	$scope-iPad-all: "only screen and (min-device-width : 768px) and (max-device-width : 1024px)";
+	$iPad-portrait: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)";
+	$iPad-landscape: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)";
+	$iPad-all: "only screen and (min-device-width : 768px) and (max-device-width : 1024px)";
 
-$scope-sm: "only screen and (min-width : 768px) and (max-width : 1024px)";
+	$xs-sm: "only screen and (max-width : 1024px)";
+
+$sm: "only screen and (min-width : 768px) and (max-width : 991px)";
+
+	$sm-md: "only screen and (min-width : 768px) and (max-width : 1200px)";
+
+	$sm-plus: "only screen and (min-width : 768px)";
+
+$md: "only screen and (min-width : 992px) and (max-width : 1200px)";
 	
-	$scope-sm-narrow: "only screen and (min-width : 768px) and (max-width : 991px)";
-	$scope-sm-wide: "only screen and (min-width : 992px) and (max-width : 1024px)"; // была дырка между 992 и 1024
-	$scope-sm-plus: "only screen and (min-width : 768px)";
+	$md-plus: "only screen and (min-width : 1025px)";
 
-$scope-md: "only screen and (min-width : 1025px) and (max-width : 1200px)";
-	
-	$scope-md-and-up: "only screen and (min-width : 1025px)";
-
-$scope-lg: "only screen and (min-width : 1201px)";
+$lg: "only screen and (min-width : 1201px)";
 
 
 
-// Использование: @media #{$scope-xs} { ... стили }
-
-/* mixins / responsive scopes end */
+// Использование: @media #{$xs} { ... стили }

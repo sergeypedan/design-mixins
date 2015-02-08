@@ -1,0 +1,69 @@
+@import 'responsive scopes';
+
+.navbar-brand {
+	& > img { display: inline-block; }
+	// чтобы можно было вставить картинку, и надпись не переносилась
+
+	@media #{$xs} { padding-left: 0; }
+}
+
+.navbar-right {
+	margin-right: 10px;
+}
+
+.fixed-navbar { padding-top: 50px; }
+
+.headerFixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	box-shadow: 0px 0px 2px rgba(30, 30, 30, 0.2);
+}
+
+	.navbar > .container {
+		padding: 0;
+	}
+
+
+
+
+
+
+// на iPhone логотип-картинка уезжает влево из-за margin -15 в bootstrap
+// а это, кажется, прошлый ресет того же
+.container > .navbar-header,
+.container-fluid > .navbar-header,
+.navbar > .container .navbar-brand,
+.navbar > .container-fluid .navbar-brand {
+	margin-left: 15px !important;
+}
+
+
+
+
+// В Bootstrap
+
+// .navbar {
+// 	min-height: 50px;
+// }
+
+// 	.navbar-nav > li > a {		// это паддинг у ссылок пунктов меню
+// 		padding-top: 15px; 
+// 		padding-bottom: 15px;
+// 		line-height: 20px;
+// 	}
+
+// 	.nav > li > a {				// то же самое, но, скорее всего, будет действовать не только на навбар
+// 		padding-top: 10px;
+// 	}
+
+// 	.navbar-header img {		// это картинка логотипа, прописана локально
+// 		height: 2em;
+// 		margin-top: 0.82em;
+// 	}
+
+// 	.navbar-brand {				// это логотип
+		
+// 	}

@@ -1,37 +1,13 @@
 /* block backgrounds (design mixins) start */
 
-.bg-pattern { background-repeat: repeat; }
-
-.bg-photo {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.bg-fixed { background-attachment: fixed; }
-
 .darken { background-color: rgba(46, 36, 51, 0.8); }
 .darken-blending { background-blend-mode: soft-light; }
 
 .bg-white { background-color: white; }
-.bg-paper {
-	background-color: #FAFAF7;
-	background-image: radial-gradient(ellipse at center top, hsl(60, 20%, 98%) 0%, hsl(60, 20%, 97%) 100%);
-}
-.bg-cement {
-	background: hsl(0, 0%, 94%) url('../images/backgrounds/cement-1.png') 0 0 repeat;
-}
-.bg-black { background-color: #0C1F2E; -webkit-font-smoothing: antialiased; }
+.bg-black { background-color: #0C1F2E; }
 
 
 
-
-
-// генераторы градиентов
-
-@mixin gradient-straight() {
-
-}
 
 
 // собственно боевые микс-ины
@@ -104,6 +80,32 @@
 	margin-bottom: 20px;
 	background-color: hsl(0, 0%, 96%);
 	box-shadow: 0 12px 5px -10px hsla(0, 0%, 0%, 0.6);
+}
+
+
+
+
+// подборка красивых фонов
+
+%milk-1 {
+	// from http://colorsublime.com
+	background-image: radial-gradient(45px 45px, hsl(0, 100%, 100%) 100%,hsl(0, 1%, 87%) 1000%);
+}
+
+
+%rainbow-1 {
+	// from http://colorsublime.com
+	background-image: linear-gradient(left, hsl(0, 100%, 50%),hsl(300, 100%, 50%),hsl(240, 100%, 50%),hsl(180, 100%, 50%),hsl(120, 100%, 50%),hsl(60, 100%, 50%),hsl(0, 100%, 50%));
+}
+
+%black-stripes-1 {
+	background-color: hsl(0, 0%, 12%);
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGXRFW…FJREFUeNpi/P//PwMMMDIy/mdC5oAoBqgKhDJ0DkCAAQColQoB2kS7lAAAAABJRU5ErkJggg==);
+}
+
+%bg-paper {
+	background-color: #FAFAF7;
+	background-image: radial-gradient(ellipse at center top, hsl(60, 20%, 98%) 0%, hsl(60, 20%, 97%) 100%);
 }
 
 /* block backgrounds (design mixins) end */

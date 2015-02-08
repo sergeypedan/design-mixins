@@ -1,20 +1,21 @@
 
-
+// approach 1
 // IE 8+
 
-@mixin valign-1-parent {
+%valign-1-parent {
 	display: table;
 	table-layout: fixed; // for bootstrap
 }
 
-@mixin valign-1-block {
+%valign-1-block {
 	display: table-cell;
 	vertical-align: middle;
 }
 
 
+// approach 2
 
-@mixin valign-2-parent {
+%valign-2-parent {
 	&:before {
 		content: "";
 		display: inline-block;
@@ -23,7 +24,19 @@
 	}
 }
 
-@mixin valign-2-block {
+%valign-2-block {
 	display: inline-block;
 	vertical-align: middle;
+}
+
+
+// for susy gallery
+
+%valign-3-container {
+	@extend %valign-2-parent;
+}
+
+%valign-3-block {
+	@extend %valign-2-block;
+	max-width: 96%;
 }

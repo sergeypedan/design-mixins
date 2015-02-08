@@ -1,0 +1,47 @@
+/* design mixins / bootstrap / bleed plate (start) */
+
+@import '../section padding';
+
+@mixin bleed-plate (
+	$bg: white
+) {
+
+	@include section-padding;
+
+	background: $bg;
+
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0px;
+		height: 100%;
+		background: $bg;
+	}
+	&:before {
+		left: -500px;
+		width: 500px;
+	}
+
+	&:after {
+		left: 100%;
+		width: 30px;
+	}
+
+	// <section class="no-padding">
+	// 	<div class="container">
+	// 		<div class="row">
+	// 			<div class="col-md-6 bleed-plate">
+	// 				<p></p>
+	// 			</div>
+	// 		</div>
+	// 	</div>
+	// </section>
+}
+
+
+
+
+
+/* design mixins / bootstrap / bleed plate (end) */

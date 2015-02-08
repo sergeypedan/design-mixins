@@ -1,34 +1,27 @@
 /* (design mixins) / invert colors */
 
 @mixin invert-prototype(
-	$color-link-invert: hsl(212, 55%, 57%),
-	$color-text: hsl(0, 0%, 30%)
+	$invert-link-color: hsl(200, 70%, 70%),
+	$color-text: hsl(0, 0%, 25%),
+	$font-smoothing: antialiased
 ) {
-	-webkit-font-smoothing: antialiased;
+	
 	color: rgba(255, 255, 255, 0.8);
+	-webkit-font-smoothing: $font-smoothing;
+
+	.btn,
+	.btn:hover { color: white; }
 
 	.muted { color: rgba(255, 255, 255, 0.5); }
 
 	b, .lead { color: white; }
 
-	a:not(.btn) { color: $color-link-invert; }
-	a:not(.btn):hover { color: lighten( $color-link-invert, 5% ); }
-
-	.AJAXlink {
-		border-color: $color-link-invert;
-
-		&:hover {
-			// border-bottom-style: solid;
-			color: lighten( $color-link-invert, 5% );
-		}
-	}
-
-	// a.btn:hover { color: inherit; }
-
 	h1, h2, h3, h4, h5,
-	.h1, .h2, .h3, .h4, .h5 { color: white !important; }
+	.h1, .h2, .h3, .h4, .h5 { color: hsla(0, 100%, 100%, 0.9) !important; }
 	
-	input,
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
 	textarea { color: $color-text; }
 
 	fieldset { background: rgba(255,255,255,0.06); }

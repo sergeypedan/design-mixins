@@ -1,0 +1,11 @@
+.nav > li > a {
+
+	transition-property: background-color;
+	transition-duration: .3s;
+
+	&:hover,
+	&:focus {
+		background-color: hsl(0, 0%, 98%);
+		transition-duration: .05s;
+	}
+}

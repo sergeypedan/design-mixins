@@ -8,7 +8,7 @@
 			padding: 10px 15px !important;
 			border-radius: 2px;
 
-			@media #{$scope-iPhone-portrait} {
+			@media #{$iPhone-portrait} {
 				padding: 8px 6px !important;
 			}
 		}
@@ -19,7 +19,7 @@
 		}
 	}
 
-	@media #{$scope-xs} {
+	@media #{$xs} {
 		.b-share-btn__wrap{
 			margin-right: 10px;
 			margin-left: 0 !important;
