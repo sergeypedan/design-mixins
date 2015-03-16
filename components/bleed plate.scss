@@ -1,6 +1,6 @@
 /* design mixins / bootstrap / bleed plate (start) */
 
-@import '../section padding';
+@import 'section padding';
 
 @mixin bleed-plate (
 	$bg: white

@@ -1,0 +1,36 @@
+%invisible-state {
+	background: none;
+	border-color: transparent;
+	box-shadow: none;
+	border-bottom: dashed 1px hsl(60, 15%, 80%);
+	// padding-left: 1px;
+}
+
+%hover-state {
+	background-color: white;
+}
+
+%normal-state {
+	box-shadow: inset 0 1px 1px hsla(0, 0%, 0%, 0.075);
+	background-color: white;
+	// border-width: 1px;
+	// padding-left: 12px;
+	border-color: hsl(0, 0%, 80%);
+	border-style: solid;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+
+	transition-property: all;
+	transition-duration: .2s;
+
+	&.hidden-affordance {
+		@extend %invisible-state;
+
+		&:focus { @extend %normal-state; }
+		&:hover { @extend %normal-state; }
+	}
+}

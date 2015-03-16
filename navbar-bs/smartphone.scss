@@ -1,0 +1,33 @@
+/* menu smartphone (be) start */
+
+/* import responsive scopes */
+@import 'responsive scopes';
+
+
+@media only screen and (max-width : 768px) { // col-xs-, iPhone portrait
+
+	.navbar-toggle {
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-size: 1.8em;
+		color: #ccc;
+		margin-bottom: 0;
+	}
+
+	.navbar-brand {
+		font-size: 1em;
+		margin-left: 1em;
+		font-weight: bold;
+	}
+
+	.navbar .nav {
+		margin: 0;
+	}
+
+	.navbar-nav>li>a {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
+
+/* menu smartphone (be) end */

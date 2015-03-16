@@ -32,7 +32,8 @@
 
 @mixin hanging-icon-div-2(
 	$gutter: 15px,
-	$icon-padding-top: 0px
+	$icon-padding-top: 0px,
+	$gutter-tight: 8px
 ) {
 	// structure: 
 	// <div class="hanging-icon">
@@ -53,6 +54,8 @@
 	& > .icon {
 		padding-right: $gutter;
 		padding-top: $icon-padding-top;
+
+		&.tight { padding-right: $gutter-tight; }
 	}
 
 	& > .text {

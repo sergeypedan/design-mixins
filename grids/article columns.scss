@@ -1,13 +1,16 @@
-@import 'responsive scopes';
+@import '../responsive scopes';
 
 @mixin article-columns(
 	$lg-columns: 3,
 	$md-columns: 2,
 	$sm-columns: 2,
-	$xs-columns: 1
+	$xs-columns: 1,
+	$gap: 40px
 ) {
 	@media #{$lg} { column-count: $lg-columns; }
 	@media #{$md} { column-count: $md-columns; }
 	@media #{$sm} { column-count: $sm-columns; }
 	@media #{$xs} { column-count: $xs-columns; }
+
+	column-gap: $gap;
 }

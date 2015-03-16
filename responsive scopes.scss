@@ -1,4 +1,3 @@
-// Ещё сюда можно импортировать переменные из var
 // $break-lg: 1200px;
 // $break-md: 992px;
 // $break-sm: 768px;
@@ -6,8 +5,6 @@
 	$iPhone-portrait: "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait)";
 	$iPhone-landscape: "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape)";
 	$iPhone-all: "only screen and (min-device-width : 320px) and (max-device-width : 568px)";
-
-// дырка между 568 и 768
 
 $xs: "only screen and (max-width : 767px)";
 
@@ -31,4 +28,4 @@ $lg: "only screen and (min-width : 1201px)";
 
 
 
-// Использование: @media #{$xs} { ... стили }
+// Use: @media #{$xs} { ... styles }

@@ -1,0 +1,12 @@
+@-webkit-keyframes rotation {
+	from { transform: rotate(0deg);   }
+	to   { transform: rotate(360deg); }
+}
+
+@mixin rotate-spinner( $duration: 0.8s, $name: rotation ) {
+	animation-name: $name;
+	animation-duration: $duration;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	transform: translate3d(0, 0, 0);
+}

@@ -1,0 +1,30 @@
+/* images (be) start */
+
+img.p { margin-bottom: 1em; }
+
+.text-center > img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+
+.img-cir-compensation-top {
+	margin-top: -0.5em;
+
+	@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) { // iPhone 4 portrait (verified)
+		margin-top: -0.2em;
+	}
+}
+
+.img-cir-compensation-left {
+	margin-left: -1em;
+
+	@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) { // iPhone 4 portrait (verified)
+		margin-left: -0.2em;
+	}
+}
+
+/* images (be) end */

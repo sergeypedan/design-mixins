@@ -1,19 +1,19 @@
-.moreTop {
+.moreTop, .more-top {
 	margin-top: 2em;
 }
 
-.noTop {
+.noTop, .no-top {
 	margin-top: 0;
 	padding-top: 0;
 }
 
-.moreBottom { margin-bottom: 1.5em; }
+.moreBottom, .more-bottom { margin-bottom: 1.5em; }
 .paddingBottom { padding-bottom: 1em; }
-.noBottom { margin-bottom: 0; padding-bottom: 0; }
+.noBottom, .no-bottom { margin-bottom: 0; padding-bottom: 0; }
 .child-no-bottom { p { margin-bottom: 0; } }
 
-.lessPadding { padding-top: 20px; padding-bottom: 20px;}
-.noPadding { padding-top: 0; padding-bottom: 0;}
+.lessPadding, .less-padding { padding-top: 20px; padding-bottom: 20px;}
+.noPadding, .no-padding { padding-top: 0; padding-bottom: 0;}
 
 
 

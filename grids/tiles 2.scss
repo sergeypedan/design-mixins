@@ -1,0 +1,141 @@
+@import '../responsive scopes';
+
+
+
+%responsive-container {
+
+	@media #{$lg} { max-width: 1170px; }
+	@media #{$md} { max-width: 970px; }
+	@media #{$sm} { max-width: 750px; }
+	@media #{$xs} { margin-left: 20px; margin-right: 20px; }
+}
+
+
+
+
+@mixin li-grid(
+	$lg-columns: 6,
+	$md-columns: 6,
+	$sm-columns: 4,
+	$xs-columns: 2,
+	$as_what: "row",
+	$gutter: (gutters: 1/5),
+	$row-gutter-lg: 30px,
+	$row-gutter-md: 30px,
+	$row-gutter-sm: 30px,
+	$row-gutter-xs: 30px
+) {
+
+	padding-left: 0;		// to override Bootstrap
+	margin-bottom: 0;		// to override Bootstrap
+
+	list-style-type: none;
+
+	@include container;
+	
+	@if $as_what == "as_container" { @extend %responsive-container; }  // можно поставить li-grid прямо в <body> — тогда, чтобы максимальная ширина соответствовала бутстрапной, мы делаем это
+
+	
+	li {
+		
+		@include layout($gutter);
+		
+		@media #{$lg} {
+			@if $lg-columns == 8 {   @include gallery(1 of 8);   &:nth-child(n+9) { margin-top: $row-gutter-lg; }   }
+			@if $lg-columns == 7 {   @include gallery(1 of 7);   &:nth-child(n+8) { margin-top: $row-gutter-lg; }   }
+			@if $lg-columns == 6 {   @include gallery(1 of 6);   &:nth-child(n+7) { margin-top: $row-gutter-lg; }   }
+			@if $lg-columns == 5 {   @include gallery(1 of 5);   &:nth-child(n+6) { margin-top: $row-gutter-lg; }   }
+			@if $lg-columns == 4 {   @include gallery(1 of 4);   &:nth-child(n+5) { margin-top: $row-gutter-lg; }   }
+			@if $lg-columns == 3 {   @include gallery(1 of 3);   &:nth-child(n+4) { margin-top: $row-gutter-lg; }   }
+			@if $lg-columns == 2 {   @include gallery(1 of 2);   &:nth-child(n+3) { margin-top: $row-gutter-lg; }   }
+		}
+		
+		@media #{$md} {
+			@if $md-columns == 8 {   @include gallery(1 of 8);   &:nth-child(n+9) { margin-top: $row-gutter-md; }   }
+			@if $md-columns == 7 {   @include gallery(1 of 7);   &:nth-child(n+8) { margin-top: $row-gutter-md; }   }
+			@if $md-columns == 6 {   @include gallery(1 of 6);   &:nth-child(n+7) { margin-top: $row-gutter-md; }   }
+			@if $md-columns == 5 {   @include gallery(1 of 5);   &:nth-child(n+6) { margin-top: $row-gutter-md; }   }
+			@if $md-columns == 4 {   @include gallery(1 of 4);   &:nth-child(n+5) { margin-top: $row-gutter-md; }   }
+			@if $md-columns == 3 {   @include gallery(1 of 3);   &:nth-child(n+4) { margin-top: $row-gutter-md; }   }
+			@if $md-columns == 2 {   @include gallery(1 of 2);   &:nth-child(n+3) { margin-top: $row-gutter-md; }   }
+		}
+		
+		@media #{$sm} {
+			@if $sm-columns == 8 {   @include gallery(1 of 8);   &:nth-child(n+9) { margin-top: $row-gutter-sm; }   }
+			@if $sm-columns == 7 {   @include gallery(1 of 7);   &:nth-child(n+8) { margin-top: $row-gutter-sm; }   }
+			@if $sm-columns == 6 {   @include gallery(1 of 6);   &:nth-child(n+7) { margin-top: $row-gutter-sm; }   }
+			@if $sm-columns == 5 {   @include gallery(1 of 5);   &:nth-child(n+6) { margin-top: $row-gutter-sm; }   }
+			@if $sm-columns == 4 {   @include gallery(1 of 4);   &:nth-child(n+5) { margin-top: $row-gutter-sm; }   }
+			@if $sm-columns == 3 {   @include gallery(1 of 3);   &:nth-child(n+4) { margin-top: $row-gutter-sm; }   }
+			@if $sm-columns == 2 {   @include gallery(1 of 2);   &:nth-child(n+3) { margin-top: $row-gutter-sm; }   }
+			@if $sm-columns == 1 { 											 }
+		}
+		
+		@media #{$xs} {
+			@if $xs-columns == 8 {   @include gallery(1 of 8);   &:nth-child(n+9) { margin-top: $row-gutter-xs; }   }
+			@if $xs-columns == 7 {   @include gallery(1 of 7);   &:nth-child(n+8) { margin-top: $row-gutter-xs; }   }
+			@if $xs-columns == 6 {   @include gallery(1 of 6);   &:nth-child(n+7) { margin-top: $row-gutter-xs; }   }
+			@if $xs-columns == 5 {   @include gallery(1 of 5);   &:nth-child(n+6) { margin-top: $row-gutter-xs; }   }
+			@if $xs-columns == 4 {   @include gallery(1 of 4);   &:nth-child(n+5) { margin-top: $row-gutter-xs; }   }
+			@if $xs-columns == 3 {   @include gallery(1 of 3);   &:nth-child(n+4) { margin-top: $row-gutter-xs; }   }
+			@if $xs-columns == 2 {   @include gallery(1 of 2 1/10)  }
+			@if $xs-columns == 1 {   @include clearfix;  }
+		}
+	}
+}
+
+// usage
+
+// .my-ul {
+// 	@include li-grid(6, 6, 3, 2);
+// }
+
+
+
+
+
+
+
+
+@mixin div-grid(
+	$lg-columns: 6,
+	$md-columns: 6,
+	$sm-columns: 4,
+	$xs-columns: 2
+) {
+
+	@extend %susy-container;
+
+	.cell {
+		
+	}
+}
+
+
+
+// horizontal thumbnail
+
+%horizontal_thumbnail__picture_container {
+	@media #{$xs} {
+		float: left;
+		max-width: 30%;
+	}
+
+	a { border-bottom: 0px; }
+
+	img {
+		display: block;
+		max-width: 100%;
+	}
+
+	margin-bottom: 15px;
+}
+
+%horizontal_thumbnail__desctiption {
+	@media #{$xs} {
+		margin-left: 37%;
+	}
+	h3, h4, h5, h6 {
+		margin-top: 0;
+	}
+}

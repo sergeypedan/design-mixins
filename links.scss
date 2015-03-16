@@ -46,7 +46,7 @@
 
 @mixin link-border( $color: hsl(208, 88%, 33%), $hover-color: hsl(208, 95%, 25%), $opacity: .2 ) {
 	
-	color: $color;
+	// color: $color;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	border-bottom-color: transparentize( $color, 1 - $opacity );

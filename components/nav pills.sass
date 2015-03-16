@@ -1,0 +1,33 @@
+.nav-pills {
+
+	& > li.active {
+		& > a,
+		& > a:hover,
+		& > a:focus {
+			background-color: transparent;
+			border: solid 1px $color-muted-light;
+			color: $color-text;
+			cursor: default;
+		}
+
+		.invert & {
+			a,
+			a:hover,
+			a:focus {
+				color: white;
+				border: solid 1px hsla(0, 0%, 90%, 0.3);
+			}
+		}
+	}
+
+	.invert & {
+		a {
+			color: white;
+			&:hover,
+			&:focus {
+				color: white;
+				background-color: hsla(0, 0%, 100%, 0.1);
+			}
+		}
+	}
+}

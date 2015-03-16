@@ -53,7 +53,7 @@
 
 // ЖЖ Варламова
 %ProximaNova-VarlamovZZ {
-	font-family: 'ProximaNova-Regular', Helvetica, sans-serif;
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;;
 	font-size: 16px;
 	line-height: 1.4em; // 22.4px
 	max-width: 53em;
@@ -63,12 +63,21 @@
 
 // Foursquare blog
 %ProximaNova-Foursquare {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;;
 	font-size: 15px;
 	line-height: 1.6em; // 24px
 	max-width: 47em;
 	color: #4c4c4c;
 	margin-bottom: 20px;
+}
+
+// True University
+%ProximaNova-TrueUniversity {
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+	font-size: 17px;
+	line-height: 1.45em;
+	// color: hsl(213, 5%, 35%);
+	-webkit-font-smoothing: antialiased;
 }
 
 

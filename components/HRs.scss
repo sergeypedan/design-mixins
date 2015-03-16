@@ -1,8 +1,15 @@
-/* mixins / HRs (design mixins) end */
+hr {
+	border-bottom-color: hsl(0, 0%, 95%);
+	border-top-color: hsl(0, 0%, 95%);
+}
+
+.hr-white {
+	border-top-color: white;
+	border-bottom-color: white;
+}
 
 
-
-body > hr { margin: 0; }
+section + hr { margin: 0; }
 // т. к. у section уже есть отступы, линейкам между ними отступы не нужны
 
 .container > hr {
@@ -10,6 +17,18 @@ body > hr { margin: 0; }
 	@media #{ $xs } { margin: 15px 0; }
 }
 
+
+
+@mixin hr-cut (
+	$thickness: 1px,
+	$background-color: white
+){
+	height: $thickness;
+	border: 0;
+	background-image: linear-gradient(to right, $background-color, hsl(48, 13%, 90%), $background-color);
+
+	// Нужно встроить различие для светлого и тёмного фона
+}
 
 
 @mixin hr-background-image($image_URL, $thickness: 3px) {
@@ -42,16 +61,6 @@ body > hr { margin: 0; }
 
 
 @mixin hr-icon-inside($image_URL, $icon_width, $icon_height, $border_width: 10px) {
-
-	body > & {
-		margin-bottom: 0px;
-		margin-top: 0px;
-	}
-
-	.container > & {
-		margin-bottom: 40px;
-		margin-top: 40px;
-	}
 
 	&:after {
 		content: '';

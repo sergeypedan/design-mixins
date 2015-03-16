@@ -1,0 +1,11 @@
+.alert {
+	padding: 10px 15px;
+	margin-bottom: 0;
+}
+
+.alert-dismissable,
+.alert-dismissible {
+	.close {
+		right: inherit;
+	}
+}

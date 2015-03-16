@@ -1,0 +1,14 @@
+$absolute_max_with: 750px
+
+p
+	max-width: 42em
+
+.lead
+	max-width: 42em
+
+
+@mixin max_width( $font_size )
+	@if $font_size * 42 > $absolute_max_with
+		max-width: $absolute_max_with
+	@else
+		max-width: 42em

@@ -1,0 +1,182 @@
+@mixin triangle-bottom-cutout
+(
+	$cut-out-mask: '../images/hr/cut-out.svg',
+	$triangle-height: 20px,
+	$bg-photo: 'photo.jpg'
+) {
+	background-image: url($cut-out-mask), url($bg-photo);
+	background-color: white;
+	background-position: center bottom, center top;
+	background-size: auto $triangle-height, cover;
+	background-repeat: no-repeat;
+}
+
+@mixin triangle-bottom-cutout-after
+(
+	$cut-out-mask: '../images/hr/cut-out.svg',
+	$triangle-height: 20px,
+	$bg-photo: 'photo.jpg'
+) {
+	&:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: $triangle-height;
+		background: url($cut-out-mask) no-repeat center bottom;
+	}
+}
+
+
+@mixin triangle-top-color-1
+(	
+	$triangle-url,
+	$triangle-height: 70px
+) {
+	padding-top: $triangle-height;
+	background: url($triangle-url) no-repeat center top;
+	background-size: auto, $triangle-height;
+}
+
+
+@mixin triangle-top-2
+(
+	$triangle-url: '../images/chrome/triangle.svg',
+	$triangle-height: 20px,
+	$position-x: 50%,
+	$width: 100%
+) {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0px;
+		width: $width;
+		height: $triangle-height;
+		background-image: url($triangle-url);
+		background-repeat: no-repeat;
+		background-position-x: $position-x;
+	}
+}
+
+
+@mixin triangle-after
+(
+	$triangle-url: '../images/chrome/triangle.svg',
+	$triangle-height: 20px,
+	$position-x: 50%,
+	$width: 100%
+) {
+	&:after {
+		content: '';
+		position: absolute;
+		width: $width;
+		height: $triangle-height;
+		background-image: url($triangle-url);
+		background-repeat: no-repeat;
+		background-position-x: $position-x;
+	}
+}
+
+@mixin triangle-after-juice
+(
+	$color: white,
+	$size: 20px,
+	$position-x: 50%,
+	$width: 100%,
+	$bg-color: black
+) {
+	&:after {
+		content: '';
+		position: absolute;
+		width: 0;
+		border-style: solid;
+		border-width: ($size*1.625) $size 0 $size;
+		border-color: $color transparent transparent transparent;
+		left: $position-x;
+		background-color: $bg-color;
+	}
+}
+
+
+@mixin triangle-juice(	$direction: down,
+								$size: 16px,
+								$color: white,
+								$center: false,
+								$element: after
+){
+
+	&:#{$element} {
+		@if not $center {
+			position: absolute;
+		}
+		content:'';
+		@include size(0);
+		-webkit-transform: rotate(360deg);
+		border-style: solid;
+		@if $direction == up {
+			border-width: 0 $size ($size*1.625) $size;
+			border-color: transparent transparent $color transparent;
+			@if $center {
+				@include absolute(null,null,100%,50%);
+				transform: translateX(-$size);
+			}
+		}
+		@else if $direction == up-right {
+			border-width: 0 $size $size 0;
+			border-color: transparent $color transparent transparent;
+			@if $center {
+				@include absolute(0,0);
+			}
+		}
+		@else if $direction == right {
+			border-width: $size 0 $size ($size*1.625);
+			border-color: transparent transparent transparent $color;
+			@if $center {
+				@include absolute(50%,null,null,100%);
+				transform: translateY(-$size);
+			}
+		}
+		@else if $direction == down-right {
+			border-width: 0 0 $size $size;
+			border-color: transparent transparent $color transparent;
+			@if $center {
+				@include absolute(null,0,0);
+			}
+		}
+		@else if $direction == down {
+			border-width: ($size*1.625) $size 0 $size;
+			border-color: $color transparent transparent transparent;
+			@if $center {
+				@include absolute(100%,null,null,50%);
+				transform: translateX(-$size);
+			}
+		}
+		@else if $direction == down-left {
+			border-width: $size 0 0 $size;
+			border-color: transparent transparent transparent $color;
+			@if $center {
+				@include absolute(null,null,0,0);
+			}
+		}
+		@else if $direction == left {
+			border-width: $size ($size*1.625) $size 0;
+			border-color: transparent $color transparent transparent;
+			@if $center {
+				@include absolute(50%,100%);
+				transform: translateY(-$size);
+			}
+		}
+		@else if $direction == up-left {
+			border-width: $size $size 0 0;
+			border-color: $color transparent transparent transparent;
+			@if $center {
+				@include absolute(0,null,null,0);
+			}
+		}
+		@else {
+			@warn "Available directions: up, up-right, right, down-right, down, down-left, left, up-left.";
+		}
+		@content;
+	}
+}

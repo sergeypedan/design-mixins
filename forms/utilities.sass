@@ -1,0 +1,33 @@
+// input addon
+
+.addon-mimic
+	background: none
+	border-right: 0
+	padding-right: 0
+	box-shadow: inset 0 1px 1px hsla(0, 0%, 0%, 0.075) // как у инпута
+
+	& + input
+		border-left: 0
+		padding-left: 0
+
+
+
+@mixin input-max-width ($width: 670px)
+	input,
+	textarea,
+	select,
+	.form-control
+		max-width: $width
+
+	.no-max-w
+		max-width: none
+
+
+
+// @mixin checkbox-spacing( $spacing: 10px )
+// 	margin-top: $spacing
+// 	margin-bottom: $spacing
+
+// 	& + &
+// 		margin-top: $spacing / 2
+

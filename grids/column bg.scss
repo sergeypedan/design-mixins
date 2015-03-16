@@ -1,0 +1,107 @@
+// section padding part
+
+%no_padding_for_section {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+@mixin section_padding_on_column( $section-padding: 5em ) {
+	padding-top: $section-padding;
+	padding-bottom: $section-padding - .8em;
+}
+
+
+
+
+// column bg parts
+
+%prevent_bg_leach {
+	overflow: hidden;
+}
+
+@mixin column_bg (
+							$content-padding: 40px,
+							$padding-side: left
+						) {
+	position: relative;
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;	// перекрывается миксинами
+		width: 9999px;
+		height: 9999px;
+		z-index: -1;
+	}
+}
+
+
+
+
+
+@mixin column_with_bg__susy ( $gap: 60px, $bg-color: hsl(0, 0%, 97%) ) {
+	@include column_bg();
+
+	&:before {
+		background-color: $bg-color;
+		left: $gap / 2 * -1;
+	}
+}
+
+
+@mixin column_widh_bg__bootstrap () {
+	@include column_bg();
+	&:before { background-color: $bg-color; }
+}
+
+
+
+
+// сборка — секция
+
+@mixin section_with_column_bg () {
+	@extend %no_padding_for_section;
+	@extend %prevent_bg_leach;
+
+	.column_padding {
+		@include section_padding_on_column();
+	}
+}
+
+
+
+
+// Использование
+
+// .section_with_column_bg {
+// 	@include section_with_column_bg;
+
+// 	.with_bg__bootstrap {
+// 		@include column_widh_bg__bootstrap( $bg-color: green );
+// 	}
+
+// 	.with_bg__susy {
+// 		@include column_with_bg__susy( $gap: 60px, $bg-color: cyan );
+// 	}
+// }
+
+
+
+// <section class="section_with_column_bg">
+// 	<div class="container">
+// 		<div class="row">
+// 			<div class="column_padding col-md-5">Lorem ipsum</div>
+// 			<div class="column_padding col-md-7 with_bg__bootstrap">Lorem ipsum</div>
+// 		</div>
+// 	</div>
+// </section>
+
+
+// <section class="section_with_column_bg">
+// 	<div class="container-susy">
+// 		<div class="column_padding column-main">Lorem ipsum</div>
+// 		<aside class="column_padding aside with_bg__susy">Lorem ipsum</aside>
+// 	</div>
+// </section>
