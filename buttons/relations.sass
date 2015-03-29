@@ -1,6 +1,5 @@
-.btn
+.btn-spacing
 	margin-top: .5em
-	// experimental: больше пространства перед тяжёлым объектом
 
 
 
@@ -15,9 +14,17 @@
 
 
 .btn-stack
+	.btn
+		display: block
+		
 	.btn + .btn,
 	br + .btn
 		margin-top: 15px
+		margin-left: 0
+	
+	.btn + .btn-xs,
+	br + .btn-xs
+		margin-top: 8px
 		margin-left: 0
 
 

@@ -119,7 +119,7 @@
 	@include darken-on-hover( $bg-color, $text-color );
 	&:hover, &:focus {
 		// border-color: darken( $bg-color, 5% );
-		border-bottom: solid 1px darken($bg-color, 6%);
+		border-bottom: solid 1px darken($bg-color, 6%) !important;	// чтобы подчёркивание ссылок не добавляло синий бордер
 	}
 	@include btn-transitions;
 }
@@ -335,8 +335,9 @@
 @mixin btn-outline(
 	$border-color,
 	$fill-color: none,
-	$fill-on-hover: blue,
-	$flip-on-hover: false
+	$fill-on-hover: $border-color,
+	$flip-on-hover: false,
+	$text-color: $border-color
 ) {
 	background: $fill-color;
 	border: solid 1px $border-color;
@@ -344,6 +345,10 @@
 	color: hsl(227, 7%, 26%);	// просто чёрный для текста
 
 	.glyphicon, .fa, .icomoon { color: $border-color; }
+
+	@if $text-color {
+		color: $text-color;
+	}
 
 	&:hover, &:focus {
 		border-color: $fill-on-hover;
@@ -361,14 +366,15 @@
 	$border-color: hsla(0, 0%, 100%, .4),
 	$flip-on-hover: false,
 	$flip-text-color: #333,
-	$text-color: white )
+	$text-color: white,
+	$icon-color: $border-color )
 {
 	background-image: none;
 	background-color: rgba(255, 255, 255, 0.03);
 	border-color: $border-color;
 	color: $text-color;
 
-	.glyphicon, .fa, .icomoon { color: white; }
+	span, i { color: $icon-color; }
 
 	@if $flip-on-hover {
 		&:hover,

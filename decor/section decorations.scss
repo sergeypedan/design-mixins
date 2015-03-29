@@ -64,17 +64,18 @@
 (
 	$triangle-url: '../images/chrome/triangle.svg',
 	$triangle-height: 20px,
-	$position-x: 50%,
-	$width: 100%
+	$left: 50%,
+	$width: 30px
 ) {
 	&:after {
 		content: '';
 		position: absolute;
 		width: $width;
 		height: $triangle-height;
+		left: $left;
 		background-image: url($triangle-url);
 		background-repeat: no-repeat;
-		background-position-x: $position-x;
+		background-position-x: 50%;
 	}
 }
 

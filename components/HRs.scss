@@ -119,4 +119,7 @@ section + hr { margin: 0; }
 	);
 }
 
-/* mixins / HRs (design mixins) end */
+@mixin hr-razor( $central_color ) {
+	height: 1px;
+	background-image: linear-gradient(to right, hsl(0, 0%, 0%, 0), $central_color, hsl(0, 0%, 0%, 0));
+}

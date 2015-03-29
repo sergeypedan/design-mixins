@@ -12,11 +12,12 @@
 
 
 
-@mixin input-max-width ($width: 670px)
-	input,
-	textarea,
-	select,
-	.form-control
+@mixin input-max-width ($width: 500px)
+	// input,
+	// textarea,
+	// select,
+	// .form-control
+	.form-group
 		max-width: $width
 
 	.no-max-w
@@ -24,10 +25,8 @@
 
 
 
-// @mixin checkbox-spacing( $spacing: 10px )
-// 	margin-top: $spacing
-// 	margin-bottom: $spacing
+.text-center
 
-// 	& + &
-// 		margin-top: $spacing / 2
-
+	.form-group
+		margin-left: auto
+		margin-right: auto
