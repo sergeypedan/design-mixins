@@ -1,0 +1,31 @@
+// $break-lg: 1200px;
+// $break-md: 992px;
+// $break-sm: 768px;
+
+	$iPhone-portrait: "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait)";
+	$iPhone-landscape: "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape)";
+	$iPhone-all: "only screen and (min-device-width : 320px) and (max-device-width : 568px)";
+
+$xs: "only screen and (max-width : 767px)";
+
+	$iPad-portrait: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)";
+	$iPad-landscape: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)";
+	$iPad-all: "only screen and (min-device-width : 768px) and (max-device-width : 1024px)";
+
+	$xs-sm: "only screen and (max-width : 1024px)";
+
+$sm: "only screen and (min-width : 768px) and (max-width : 991px)";
+
+	$sm-md: "only screen and (min-width : 768px) and (max-width : 1200px)";
+
+	$sm-plus: "only screen and (min-width : 768px)";
+
+$md: "only screen and (min-width : 992px) and (max-width : 1200px)";
+
+	$md-plus: "only screen and (min-width : 992px)";
+
+$lg: "only screen and (min-width : 1201px)";
+
+
+
+// Use: @media #{$xs} { ... styles }

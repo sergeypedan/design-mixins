@@ -1,0 +1,154 @@
+@mixin hanging-media(
+	$gutter: 20px
+) {
+	display: table-cell;
+	vertical-align: top;
+
+	padding-right: $gutter;
+}
+
+@mixin hanging-content(
+	$title-margin-top: -0.25em
+) {
+	display: table-cell;
+	vertical-align: top;
+
+	.title { margin-top: $title-margin-top; }
+}
+
+
+
+
+
+
+
+@mixin hanging-icon-div-3(
+	$gutter: 15px,
+	$media-padding-top: 0px,
+	$title_top: -.35em
+) {
+
+	& > .media,
+	& > .content {
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	& > .media {
+		padding-right: $gutter;
+		padding-top: $media-padding-top;
+	}
+
+	& > .content {
+		.title {
+			margin-top: $title_top;
+		}
+	}
+
+	// structure:
+	// <div class="hanging-icon">
+	// 	<div class="media">
+	//			<img>
+	//		</div>
+	// 	<div class="content">
+	//			<h3 class="title"></h3>
+	// 		<p></p>
+	// 	</div>
+	// </div>
+}
+
+
+
+
+
+@mixin hanging-icon-div-2(
+	$gutter: 15px,
+	$icon-padding-top: 0px,
+	$gutter-tight: 8px,
+	$title_top: -.35em
+) {
+	// structure:
+	// <div class="hanging-icon">
+	// 	<div class="icon">
+	//			<img>
+	//		</div>
+	// 	<div class="text">
+	//			<h3 class="title"></h3>
+	// 		<p></p>
+	// 	</div>
+	// </div>
+
+	& > .icon,
+	& > .text {
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	& > .icon {
+		padding-right: $gutter;
+		padding-top: $icon-padding-top;
+
+		&.tight { padding-right: $gutter-tight; }
+	}
+
+	& > .text {
+		.title {
+			margin-top: $title_top;
+		}
+	}
+}
+
+
+
+
+@mixin hanging-icon-div-1(
+	$gutter: 15px
+) {
+	// structure:
+	// <div class="hanging-icon">
+	// 	<img class="icon">
+	// 	<div class="text">
+	// 		<p></p>
+	// 	</div>
+	// </div>
+
+	& > .icon {
+		float: left;
+		margin-right: $gutter;
+	}
+	& > .text {
+		float: left;
+	}
+}
+
+
+
+
+@mixin icon-text-indent-1(
+	$text-indent: -6px,
+	$margin-left: 12px
+) {
+	display: block;
+	text-indent: $text-indent;
+	margin-left: $margin-left;
+}
+
+
+
+@mixin hanging-icons-ul-1(
+	$img-width: 40,
+	$gutter: 20px
+) {
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
+
+	li {
+		background-image: url('http://placehold.it/#{$img-width}x#{$img-width}');
+		background-repeat: no-repeat;
+		padding-left: $img-width + $gutter;
+	}
+}
+
+
+/* design mixins / hanging icon end */

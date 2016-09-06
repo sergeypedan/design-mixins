@@ -1,0 +1,33 @@
+@mixin hr-between(
+	$padding: 30px,
+	$border_color: hsl(0, 0%, 97%)
+){
+	margin-top: $padding;
+	padding-top: $padding;
+	border-top: solid 1px $border_color;
+}
+
+// .stack-via-hr-2
+// 	& + &
+// 		+hr-between(45px)
+
+
+
+
+
+
+@mixin zebra-bg(
+	$padding: 30px,
+	$order: even,
+	$bg_class: ""
+){
+
+	padding-top: $padding;
+	padding-bottom: $padding;
+
+	&:nth-child(#{$order}) {
+		@extend #{$bg_class};
+	}
+}
+
+// @include zebra-bg(40px, odd, ".bg-alternative-1")

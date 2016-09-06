@@ -1,0 +1,60 @@
+@mixin link-border-opaque
+(
+	$color               : hsl(208, 88%, 33%),
+	$hover-color         : hsl(208, 95%, 25%),
+	$border-bottom-color : hsl(208, 20%, 94%),
+	$invert-color        : hsl(208, 70%, 70%),
+	$invert-hover-color  : hsl(208, 43%, 52%)
+) {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: $border-bottom-color;
+
+	transition-property: color, border-bottom-color;
+	transition-duration: .5s;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: $hover-color;
+		border-bottom-color: darken( $border-bottom-color, 10% );
+		transition-duration: .2s;
+	}
+
+	&.AJAXlink,
+	&.pseudo {
+		border-bottom-style: dotted;
+	}
+
+	&.no-link,
+	&.noLink {
+		border-bottom-style: none;
+	}
+
+	&.sudden-link {
+		color: inherit;
+		border-bottom-style: none;
+
+		&:hover,
+		&:focus {
+			color: $hover-color;
+			border-bottom-style: solid;
+		}
+	}
+
+	.navbar &,
+	.navbar &:hover {
+		border-bottom: 0;
+	}
+
+	& > img { border: none; }
+
+	.invert & {
+		color: $invert-color;
+		border-bottom-color: hsl(163, 5%, 30%);
+
+		&:hover {
+			color: $invert-hover-color;
+		}
+	}
+}

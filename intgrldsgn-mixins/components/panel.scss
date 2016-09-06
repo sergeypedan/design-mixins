@@ -1,0 +1,45 @@
+/* panel (be) start */
+
+@import 'variables BXt.scss';
+
+
+
+
+.panel-default {
+
+	.panel-footer {
+		border-top: none;
+	}
+}
+
+
+
+@mixin panel-skin {
+	padding-top: 3em;
+	padding-bottom: 2.5em;
+	background-color: white;
+}
+
+
+
+$panel-padding-md: 40px;
+$panel-padding-xs: 20px;
+
+.container-panel {
+	@include panel-skin;
+	padding-left: $panel-padding-md;
+	padding-right: $panel-padding-md;
+}
+
+@media (max-width: $break-sm) {
+
+	.container-panel {
+		padding-left: $panel-padding-xs;
+		padding-right: $panel-padding-xs;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+}
+
+/* panel (be) end */

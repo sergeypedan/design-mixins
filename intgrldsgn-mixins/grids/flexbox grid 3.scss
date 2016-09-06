@@ -1,0 +1,153 @@
+@mixin column-count($columns) {
+	flex-basis: 100% / $columns;
+}
+
+
+@mixin vertical-gutters($gutter) {
+	margin-bottom: $gutter;
+	&:last-child { margin-bottom: 0; }
+}
+
+
+@mixin side-paddings($gutter) {
+	padding-left:  $gutter / 2;
+	padding-right: $gutter / 2;
+}
+
+
+@mixin flex($wrap: true) {
+	display: flex;
+	display: -webkit-flex;
+	flex-direcion: row;
+
+	@if $wrap == true {
+		flex-wrap:         wrap;
+		-webkit-flex-wrap: wrap;
+		justify-content:   flex-start;
+	} @else {
+		flex-wrap:         nowrap;
+		-webkit-flex-wrap: wrap;
+		justify-content:   space-between;
+	}
+}
+
+@mixin hang-out($gutter) {
+	margin-left:  -$gutter / 2;
+	margin-right: -$gutter / 2;
+}
+
+
+
+@mixin reset-ul {
+	list-style-type: none;
+	padding-left:  0;
+	margin-bottom: 0;
+}
+
+
+
+
+@mixin grid-gallery-3(
+	$ul: false,
+
+	$xs-columns: 1,
+	$xs-gutter:  20px,
+	$xs-vgutter: $xs-gutter,
+
+	$sm-min:   650px,
+	$sm-columns: 2,
+	$sm-gutter:  30px,
+	$sm-vgutter: $sm-gutter,
+
+	$md-min:   992,
+	$md-columns: 3,
+	$md-gutter:  40px,
+	$md-vgutter: $md-gutter,
+
+	$lg-min:   992px,
+	$lg-columns: 4,
+	$lg-gutter:  40px,
+	$lg-vgutter: $lg-gutter
+) {
+
+	@if $ul == true {
+		@include reset-ul;
+	}
+
+	@if $xs-columns > 1 {
+		@media (max-width: $sm-min - 1px) {
+
+			@include flex($wrap: true);
+			@include hang-out($xs-gutter);
+
+			> div, > li {
+				overflow: hidden;
+				@include vertical-gutters($xs-vgutter);
+				@include side-paddings($xs-gutter);
+				@include column-count($xs-columns);
+			}
+		}
+	} @else {
+		> div, > li {
+			@include vertical-gutters($xs-vgutter);
+		}
+	}
+
+	@if $sm-columns > 1 {
+		@media (min-width: $sm-min) and (max-width: $md-min - 1px) {
+
+			@include flex($wrap: true);
+			@include hang-out($sm-gutter);
+
+			> div, > li {
+				overflow: hidden;
+				@include vertical-gutters($sm-vgutter);
+				@include side-paddings($sm-gutter);
+				@include column-count($sm-columns);
+			}
+		}
+	} @else {
+		> div, > li {
+			@include vertical-gutters($sm-vgutter);
+		}
+	}
+
+	@if $md-columns > 1 {
+		@media (min-width: $md-min) and (max-width: $lg-min - 1px) {
+
+			@include flex($wrap: true);
+			@include hang-out($md-gutter);
+
+			> div, > li {
+				overflow: hidden;
+				@include vertical-gutters($md-vgutter);
+				@include side-paddings($md-gutter);
+				@include column-count($md-columns);
+			}
+		}
+	} @else {
+		> div, > li {
+			@include vertical-gutters($md-vgutter);
+		}
+	}
+
+	@if $lg-columns > 1 {
+		@media (min-width: $lg-min) {
+			// and (max-width: $xlg-min - 1px)
+
+			@include flex($wrap: true);
+			@include hang-out($lg-gutter);
+
+			> div, > li {
+				overflow: hidden;
+				@include vertical-gutters($lg-vgutter);
+				@include side-paddings($lg-gutter);
+				@include column-count($lg-columns);
+			}
+		}
+	} @else {
+		> div, > li {
+			@include vertical-gutters($lg-vgutter);
+		}
+	}
+}

@@ -1,0 +1,75 @@
+
+// approach 1
+// IE 8+
+
+%valign-1-parent
+	display: table
+	table-layout: fixed // for bootstrap
+
+
+%valign-1-block
+	display: table-cell
+	vertical-align: middle
+
+
+
+// approach 2
+
+%valign-2-parent
+	&:before
+		content: ""
+		display: inline-block
+		vertical-align: middle
+		height: 100%
+
+
+%valign-2-block
+	display: inline-block
+	vertical-align: middle
+
+
+
+// for susy gallery
+
+%valign-3-container
+	@extend %valign-2-parent
+
+
+%valign-3-block
+	@extend %valign-2-block
+	max-width: 96%
+
+
+
+
+
+
+
+// in Bootstrap
+// from here: http://www.minimit.com/demos/bootstrap-3-responsive-columns-of-same-height
+
+.col-middle
+	vertical-align: middle
+	display: table-cell
+	float: none !important
+
+
+.row-same-height
+	display: table
+	width: 100%
+	table-layout: fixed
+
+
+
+// <div class="container">
+// 	<div class="row">
+// 		<div class="row-same-height">
+// 			<div class="col-md-6">
+// 				Тут высокий контент
+// 			</div>
+// 			<div class="col-md-6 col-middle">
+// 				Тут объект, который мы хотим выравнивать по центру
+// 			</div>
+// 		</div>
+// 	</div>
+// </div>

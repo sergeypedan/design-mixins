@@ -1,0 +1,11 @@
+@mixin link-no-underline( $color: hsl(208, 88%, 33%), $hover-color: hsl(208, 95%, 25%) ) {
+	&.AJAXlink {
+		text-decoration: none;
+		border-bottom: dotted 1px $color-link;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}

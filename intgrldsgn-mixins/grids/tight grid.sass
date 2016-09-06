@@ -1,0 +1,27 @@
+// include into a cell
+=checker-grid
+	padding: 40px
+
+	border-color: hsl(0, 0%, 96%)
+	border-width: 1px
+	border-left-style: solid
+
+	+gallery(1 of 3 before 0)
+	&:nth-child(3n-2)
+		border-left-color: transparent
+	&:nth-child(n+4)
+		border-top-style: solid
+
+
+
+=link_with_vcentered_img($height, $padding, $align)
+	display: block
+	height: $height + $padding * 2
+	padding-top: $height / 2 + $padding
+	margin-bottom: 15px
+	text-align: $align
+
+	img
+		max-width: 100%
+		max-height: $height
+		transform: translateY(-50%)

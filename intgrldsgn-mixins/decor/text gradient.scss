@@ -1,0 +1,23 @@
+@mixin text-gradient(
+	$color_1: blue,
+	$color_2: red,
+	$color_fallback: blue,
+	$angle: 0
+) {
+	// text-align: center;
+	background-image: linear-gradient( #{$angle}deg, $color_1, $color_2 );
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: $color_fallback;
+}
+
+
+@mixin text-gradient-2(
+	$gradient: linear-gradient(120deg, hsl(155, 76%, 58%) 0%, hsl(191, 76%, 58%) 100%),
+	$color_fallback: hsl(191, 76%, 58%)
+) {
+	color: $color_fallback;
+	background-image: $gradient;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,201 @@
+@mixin rule-above(
+  $rule-width: 1px,
+  $rule-color: hsl(0, 0%, 97%),
+  $p: 1em,
+  $m: 1.3em
+) {
+  border-top: solid $rule-width $rule-color;
+  padding-top: $p;
+  margin-top: $m;
+  max-width: 100%;
+}
+
+.rule-above {
+  @include rule-above;
+}
+
+@mixin rule-below(
+  $rule-width: 1px,
+  $rule-color: hsl(0, 0%, 97%),
+  $p: .6em,
+  $m: 1em
+) {
+  border-bottom: solid $rule-width $rule-color;
+  padding-bottom: $p;
+  margin-bottom: $m;
+  max-width: 100%;
+}
+
+.rule-below {
+  @include rule-below;
+}
+
+
+
+
+
+@mixin bar-after-header(
+	$color,
+	$thickness: 4px
+) {
+	&:after {
+		content: '';
+		display: block;
+		height: $thickness;
+		width: 20%;
+		background-color: $color;
+		margin-left: 40%;
+		margin-top: 15px;
+	}
+}
+
+
+@mixin dots-after-header(
+	$color,
+	$font-size: 30px,
+	$offset: .2em
+) {
+	&:after {
+		content: '• • •';
+		display: block;
+		font-size: $font-size;
+		color: $color;
+		width: 20%;
+		margin-left: 40%;
+		margin-top: $offset;
+	}
+}
+
+
+@mixin quote-before-header(
+	$color,
+	$font-size: 30px
+) {
+	&:before {
+		content: '\"';
+		display: block;
+		font-size: $font-size;
+		color: $color;
+		width: 20%;
+		margin-left: 40%;
+		margin-top: 15px;
+	}
+}
+
+
+@mixin between-hrs-background (
+	$bg-url,
+	$align: center,
+	$span-color: white
+) {
+
+	background: url($bg-url) repeat-x center;
+
+	span {
+		display: inline-block;
+		padding: 0 .7em;
+		background: $span-color;
+	}
+
+	@if $align == center {
+		text-align: center;
+	}
+
+	@if $align == left {
+		span { padding-left: 0; }
+	}
+}
+
+
+
+
+
+@mixin dash-above
+(
+	$color: hsl(0, 64%, 50%),
+	$width: 50px,
+	$height: 4px,
+	$offset: .9em
+) {
+	position: relative;
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: $width;
+		height: $height;
+		background-color: $color;
+		top: - $offset;
+		left: 0;
+	}
+}
+
+
+
+
+@mixin dash-below (
+	$bar-color: hsl(173, 45%, 56%),
+	$width: 40px,
+	$thickness: 4px,
+	$offset: 10px,
+	$align: left
+) {
+	// margin-bottom: $offset * 2; -- мешает блин
+
+	&:after {
+		content: '';
+		display: block;
+		position: relative;
+
+		background-color: $bar-color;
+		width: $width;
+		height: $thickness;
+		top: $offset;
+
+		@if $align == center {
+			left: 50%;
+			margin-left: $width / -2;
+		}
+		@if $align == left {
+			left: 2px;
+			margin-left: 0;
+		}
+
+	}
+}
+
+
+@mixin between-icons-1 (
+	$bg-left,
+	$bg-right,
+	$width,
+	$offset: .7em,
+	$top: 0.3em
+) {
+	span {
+		display: inline-block;
+		padding: 0 $offset;
+		position: relative;
+
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: $width;
+			height: 30px;
+			top: $top;
+			background-repeat: no-repeat;
+		}
+
+		&:before {
+			background-image: url($bg-left);
+			left: -$width;
+		}
+		&:after {
+			background-image: url($bg-right);
+			right: -$width;
+		}
+	}
+}

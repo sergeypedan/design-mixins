@@ -1,0 +1,22 @@
+@mixin sudden-link
+(
+	$color_normal: $link-color,
+	$color_hover: $link-hover-color,
+	$border_color_hover: $color_hover,
+	$border_opacity_hover: .6
+) {
+	border-bottom-color: hsla(0, 0%, 0%, 0);
+
+	&:hover,
+	&:focus {
+		border-bottom-color: transparentize( $border_color_hover, 1 - $border_opacity_hover );
+	}
+}
+
+
+@mixin pseudo
+(
+
+) {
+	border-bottom-style: dotted;
+}

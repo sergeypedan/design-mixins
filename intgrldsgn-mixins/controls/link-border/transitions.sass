@@ -1,0 +1,20 @@
+@mixin link-transitions
+(
+	$mouse-in: .5s,
+	$mouse-out: .2s
+) {
+
+	transition-property: color,
+								background-color,
+								border,
+								border-color,
+								opacity;
+
+	transition-duration: $mouse-in;
+
+	&:hover,
+	&:focus {
+		transition-duration: $mouse-out;
+	}
+
+}

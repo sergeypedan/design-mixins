@@ -1,0 +1,29 @@
+@mixin link-underline( $color: hsl(208, 88%, 33%), $hover-color: hsl(208, 95%, 25%) ) {
+	color: $color;
+	text-decoration: underline;
+
+	&:hover,
+	&:focus { color: $hover-color; }
+
+	&.btn,
+	&.btn:hover {
+		text-decoration: none;
+	}
+
+	&.AJAXlink,
+	&.AJAX,
+	&.pseudo {
+		text-decoration: none;
+		border-bottom: dotted 1px $color;
+
+		&:hover,
+		&:focus {
+			color: $hover-color;
+			text-decoration: none;
+		}
+	}
+	&.no-link {
+		text-decoration: none;
+		color: $color-text;
+	}
+}

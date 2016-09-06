@@ -1,0 +1,18 @@
+=invert_map($colors)
+
+  color: map-get($colors, text)
+
+  h2,
+  h3,
+  h4,
+  h5,
+  .title
+    color: map-get($colors, headers)
+
+  b
+
+  a
+    color: map-get($colors, link)
+
+    &:hover
+      color: map-get($colors, link_hover)

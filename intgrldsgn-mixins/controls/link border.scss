@@ -1,0 +1,58 @@
+@mixin link-border
+(
+	$color: hsl(208, 88%, 33%),
+	$hover-color: hsl(208, 95%, 25%),
+	$border-opacity: .2,
+	$invert-color: hsl(200, 70%, 70%),
+	$invert-border-opacity: .3,
+	$invert-hover-color: hsl(208, 43%, 52%),
+	$invert-hover-border-opacity: .8
+) {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: transparentize( $color, 1 - $border-opacity );
+
+	transition-property: all;
+	transition-duration: .5s;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: $hover-color;
+		border-bottom-color: transparentize( $hover-color, .4 );
+		transition-duration: .2s;
+	}
+
+	&.AJAXlink,
+	&.pseudo {
+		border-bottom-style: dotted;
+		border-bottom-color: transparentize( $color, .5 );
+	}
+
+	&.no-link,
+	&.noLink {
+		border-bottom-style: none;
+	}
+
+	&.sudden-link {
+		color: inherit;
+		border-bottom-style: none;
+
+		&:hover,
+		&:focus {
+			color: $hover-color;
+			border-bottom-style: solid;
+		}
+	}
+
+	& > img { border: none; }
+
+	.invert & {
+		color: $invert-color;
+		border-bottom-color: transparentize( $invert-color, 1 - $border-opacity );
+
+		&:hover {
+			color: $invert-hover-color;
+		}
+	}
+}

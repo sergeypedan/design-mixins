@@ -1,0 +1,39 @@
+=deep_nubered_OL($spacing_level_1: 1em, $spacing_level_2: 1em)
+	list-style-type: none
+	counter-reset: item
+
+	margin-left: 0
+	padding-left: 0
+
+	li
+		display: table
+		counter-increment: item
+		margin-bottom: $spacing_level_1
+
+		&:before
+			content: counters(item, ".") ". "
+			display: table-cell
+			padding-right: 0.6em
+
+		ol
+			margin-left: 0
+			padding-left: 0
+
+			li
+				margin-top: .5em
+				margin-bottom: $spacing_level_2
+
+				&:before
+					content: counters(item, ".") " "
+
+	ul
+		margin-left: 1.6em
+
+		li
+			list-style-type: disk
+			display: list-item
+			margin-bottom: 0.3em !important
+
+			&:before
+				display: none
+

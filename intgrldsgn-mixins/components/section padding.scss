@@ -1,0 +1,48 @@
+@mixin section-padding(
+	$padding: 5em
+){
+	padding-top: $padding;
+	padding-bottom: $padding;
+
+	@media #{ $sm } {
+		$sm-decrement: 0.7;
+		padding-top: $padding * $sm-decrement;
+		padding-bottom: $padding * $sm-decrement;
+	}
+
+	@media #{ $xs } {
+		$xs-decrement: 0.5;
+		padding-top: $padding * $xs-decrement;
+		padding-bottom: $padding * $xs-decrement;
+	}
+}
+
+
+@mixin section-padding-asymmetric(
+	$padding: 5em
+){
+	$padding-bottom: $padding - .7em;
+	padding-top: 	 $padding;
+	padding-bottom: $padding-bottom;
+
+	@media #{ $sm } {
+		$sm-decrement: 0.6;
+		padding-top: 	 $sm-decrement * $padding;
+		padding-bottom: $sm-decrement * $padding-bottom;
+	}
+
+	@media #{ $xs } {
+		$xs-decrement: 0.5;
+		padding-top: 	 $xs-decrement * $padding;
+		padding-bottom: $xs-decrement * $padding-bottom;
+	}
+
+	// $section-padding: 5em
+	// $section-compact-padding: 2.5em
+
+	// section
+	// 	@include section-padding-asymmetric($section-padding)
+
+	// .section-compact
+	// 	@include section-padding-asymmetric($section-compact-padding)
+}

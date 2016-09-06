@@ -1,0 +1,113 @@
+$sample_link_color        : hsl(215, 70%, 35%);
+$sample_link_color_visited: hsl(316, 51%, 38%);
+
+
+
+@mixin link-color(
+	$color_base   : $sample_link_color,
+	$color_hover  : $color_base,
+	$color_visited: $sample_link_color_visited
+){
+	color: $color_base;
+
+	&:hover,
+	&:focus {
+		color: $color_hover;
+	}
+
+	&:visited {
+		color: $color_visited;
+	}
+}
+
+
+@mixin link-transition(
+	$transition_time_fw : .3s,
+	$transition_time_bck: .05s
+){
+	transition-property: color,
+								background-color,
+								border-color,
+								border-style,
+								border-width,
+								opacity;
+	transition-duration: $transition_time_fw;
+
+	&:hover {
+		transition-duration: $transition_time_bck;
+	}
+}
+
+
+
+@mixin link-decoration(
+	$decoration_base : "none",
+	$decoration_hover: $decoration_base
+){
+	  @if     $decoration_base == "border" {
+		text-decoration: none;
+	} @elseif $decoration_base == "underline" {
+		text-decoration: underline;
+	} @else {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:focus {
+		  @if     $decoration_hover == "border" {
+			text-decoration: none;
+		} @elseif $decoration_hover == "underline" {
+			text-decoration: underline;
+		} @else {
+			text-decoration: none;
+		}
+	}
+}
+
+
+
+@mixin link-border-settings(
+	$b_color_base   : $sample_link_color,
+	$b_color_hover  : $b_color_base,
+	$b_opacity_base : .3,
+	$b_opacity_hover: .8,
+	$dim_type: "color"
+){
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+
+	@if       $dim_type == "color" {
+		border-bottom-color: hsl(208, 20%, 90%);
+	} @elseif $dim_type == "transparency" {
+		border-bottom-color: transparentize( $b_color_base, 1 - $b_opacity_base );
+	}
+
+	&:hover,
+	&:focus {
+		border-bottom-color: transparentize( $b_color_hover, 1 - $b_opacity_hover );
+	}
+}
+
+
+
+// common types
+
+// a
+// 	+link-decoration("none")
+
+
+// p, span, li
+// 	a
+// 		+link-color($link-color)
+// 		+link-decoration("border")
+// 		+link-border-settings
+// 		+link-transition
+
+
+// .appearing-link
+// 	+link-color($link-color)
+// 	+link-decoration("border")
+// 	+link-border($b_opacity_base: 0)
+// 	+link-transition
+
+

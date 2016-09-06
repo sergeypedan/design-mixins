@@ -1,0 +1,50 @@
+%connect_with_common
+	color: white
+	text-align: left
+
+	&:hover, &:focus
+		color: white
+
+	.fa
+		position: relative
+		margin-right: 0.9em !important
+
+		&:after
+			content: ""
+			background-color: hsla(0, 100%, 100%, 0.09)
+			width: 1px
+			height: 1em
+			position: absolute
+			top: 1px
+			right: -0.6em
+
+
+
+
+
+=connect_with($provider: facebook)
+
+	$colors: ( facebook: #3b5998, twitter: #55acee, vkontakte: #45668e, googleplus: #dd4b39, instagram: #3f729b, linkedin: #0976b4 )
+
+	$provider_color: map-get($colors, $provider)
+
+	background-color: $provider_color
+	border-color: $provider_color
+
+	&:hover, &:focus
+		background-color: darken($provider_color, 3%)
+
+
+
+
+
+.btn-facebook,
+.btn-vkontakte
+	@extend %connect_with_common
+
+.btn-facebook
+	+connect_with(facebook)
+
+
+.btn-vkontakte
+	+connect_with(vkontakte)

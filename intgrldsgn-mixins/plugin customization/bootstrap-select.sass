@@ -1,0 +1,34 @@
+.bootstrap-select
+	a
+		border-bottom: none
+
+	.check-mark
+		color: rgb(84, 197, 60)
+		right: auto
+		left: 9px
+		font-size: 11px
+		margin-top: 4px
+
+	.dropdown-menu
+		li
+			margin-bottom: 0
+
+			a
+				span.text
+					margin-right: 0px !important
+					margin-left: 12px
+
+
+@mixin bootstrap-select-sizing($font-size: 14px, $li_v_pad: 3px, $search_height: 30px, $select_v_pad: 4px)
+	.btn,
+	.dropdown-menu
+		font-size: $font-size
+
+	.btn
+		padding: $select_v_pad 10px
+
+	.dropdown-menu > li > a
+		padding: $li_v_pad 14px
+
+	input.form-control
+		height: $search_height

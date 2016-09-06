@@ -1,0 +1,70 @@
+/* vertical alignment styles */
+
+.col-top
+	vertical-align: top
+
+.col-middle
+	vertical-align: middle
+
+.col-bottom
+	vertical-align: bottom
+
+
+/* columns of same height styles */
+
+.row-full-height
+	height: 100%
+
+.col-full-height
+	height: 100%
+	vertical-align: middle
+
+.row-same-height
+	display: table
+	width: 100%
+	/* fix overflow */
+	table-layout: fixed
+
+.col-xs-height
+	display: table-cell
+	float: none !important
+
+
+@media (min-width: 768px)
+	.col-sm-height
+		display: table-cell
+		float: none !important
+
+
+@media (min-width: 992px)
+	.col-md-height
+		display: table-cell
+		float: none !important
+
+
+@media (min-width: 1200px)
+	.col-lg-height
+		display: table-cell
+		float: none !important
+
+
+// http://www.minimit.com/demos/bootstrap-3-responsive-columns-of-same-height
+
+
+
+// <div class="row">
+// 	<div class="row-same-height row-full-height">
+
+// 		<div class="col-md-6 col-xs-height col-full-height">
+// 			<div class="">
+// 				<div class="content">
+// 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, hic iste. Nostrum neque optio hic dolores odit unde corporis placeat maxime, distinctio necessitatibus dolore consequuntur ipsam esse omnis incidunt ducimus quisquam impedit suscipit, in aperiam ab adipisci similique! Labore rerum dignissimos amet quis quia assumenda tenetur, voluptate pariatur asperiores temporibus ipsam, magnam natus deleniti, beatae nemo. Assumenda veniam nulla cumque molestiae commodi, quis sequi animi repellendus corrupti non quibusdam illum voluptate ab rem, corporis, vel ipsum dignissimos! Debitis quam ipsum pariatur inventore, voluptas, eligendi at optio harum vitae earum perspiciatis quasi ratione, corrupti quis enim blanditiis? Blanditiis illo sapiente, beatae sequi. Quasi in provident molestiae ab cupiditate officiis iusto, voluptatum iste animi suscipit nobis quaerat architecto illo! Quam consequuntur quae maiores cumque distinctio tenetur dolorum animi ipsa eius voluptate dignissimos, accusamus recusandae voluptas, enim, dolor nemo provident cum repellat rem repudiandae. Amet ipsa eos similique non, perspiciatis atque dicta voluptatibus ducimus quo accusantium qui, provident at iure rem aperiam sed repellendus dolores magni quisquam consequatur excepturi velit maiores iusto reprehenderit pariatur? Ullam maxime, neque consectetur deleniti laudantium pariatur rerum obcaecati deserunt ipsum eligendi dicta aliquid consequatur libero suscipit impedit quos magnam eius sunt facere autem. Autem mollitia id voluptas, aspernatur.
+// 				</div>
+// 			</div>
+// 		</div>
+// 		<div class="col-md-6 col-xs-height col-full-height text-center">
+// 			<img src="http://lorempixel.com/100/100" alt="">
+// 		</div>
+
+// 	</div>
+// </div>

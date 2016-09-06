@@ -1,0 +1,28 @@
+=video-player
+	position: relative
+	display: block
+	border-bottom-style: none
+	margin-bottom: 18px
+
+	img
+		max-width: 100%
+
+	&:after
+		content: "\f04b"
+		font-family: FontAwesome
+		position: absolute
+
+		// assuming, video size ~ 320x180px
+		font-size: 45px
+		top: 32%
+		left: 43%
+
+		color: white
+		opacity: 0.8
+		transition: .2s opacity
+
+	&:hover,
+	&:focus
+		&:after
+			opacity: 1
+			transition-duration: .1s

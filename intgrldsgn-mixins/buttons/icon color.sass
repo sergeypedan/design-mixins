@@ -1,0 +1,6 @@
+@function button_icon_color($color)
+
+	$new_color: adjust-hue($color, 10deg)
+	$new_color: lighten($new_color, 20%)
+	$new_color: saturate($new_color, 80%)
+	@return $new_color

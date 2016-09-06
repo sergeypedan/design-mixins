@@ -1,0 +1,127 @@
+%transition {
+	transition-property: background-color, border-color;
+	transition-duration: .2s;
+
+	&:hover,
+	&:focus { transition-duration: .05s; }
+}
+
+%no-outline {
+	&:active,
+	&:focus { outline: none; }
+}
+
+%no-border { border: 0; }
+
+%build {
+	border-radius: 50%;
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+}
+
+@mixin bordered(
+	$border_color,
+	$width,
+	$border_color_hover
+) {
+	background: none;
+
+	border-style: solid;
+	border-width: $width;
+	border-color: $border_color;
+
+	&:hover,
+	&:focus { border-color: $border_color_hover; }
+}
+
+@mixin size($diameter) {
+	width: $diameter;
+	height: $diameter;
+}
+
+@mixin bg_solid(
+	$bg_color,
+	$bg_initial_opacity,
+	$bg_color_hover,
+	$bg_hover_opacity
+){
+	@extend %no-border;
+	background-color: transparentize($bg_color, 1 - $bg_initial_opacity);
+
+	&:hover,
+	&:focus {
+		background-color: transparentize($bg_color_hover, 1 - $bg_hover_opacity);
+	}
+}
+
+@mixin font-size($font-size) {
+	&,
+	& > span,
+	& > i {
+		font-size: $font-size;
+		line-height: $font-size;
+	}
+}
+
+
+@mixin vertical_adjust($v_shift) {
+	@if $v_shift != 0 {
+		& > span,
+		& > img {
+			transform: translateY($v_shift);
+		}
+	}
+}
+
+
+@mixin arrow_color($arrow_color) {
+	color: $arrow_color;
+}
+
+
+
+
+
+
+// builder
+@mixin slider_arrow-1(
+	$diameter: 40px,
+	$font-size: 14px,
+	$border_color: hsl(0, 0%, 90%),
+	$border_width: 1px,
+	$bg_color: hsl(0, 0%, 80%),
+	$type: "fill",
+	$v_shift: 0,
+	$arrow_color: inherit,
+	$bg_initial_opacity: .3,
+	$bg_color_hover: $bg_color,
+	$bg_hover_opacity: .7,
+	$border_color_hover: hsl(0, 0%, 70%)
+){
+	@extend %transition;
+	@extend %build;
+	@extend %no-outline;
+	@include size($diameter);
+	@include font-size($font-size);
+	@include vertical_adjust($v_shift);
+	@include arrow_color($arrow_color);
+
+	@if $type == "fill" {
+		@include bg_solid(
+			$bg_color,
+			$bg_initial_opacity,
+			$bg_color_hover,
+			$bg_hover_opacity
+		);
+	}
+
+	@if $type == "border" {
+		@include bordered(
+			$border_color,
+			$border_width,
+			$border_color_hover
+		);
+	}
+
+}
