@@ -1,0 +1,25 @@
+{
+  "name": "Integral Design mixins",
+  "homepage": "https://github.com/sergeypedan/design-mixins",
+  "authors": [
+    "Sergey Pedan <sergey.pedan@gmail.com>"
+  ],
+  "description": "Front-end design mixins (Sass), collected across projects",
+  "main": "",
+  "keywords": [
+    "sass",
+    "css",
+    "front-end",
+    "flexbox",
+    "design"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
